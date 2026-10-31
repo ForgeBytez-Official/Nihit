@@ -235,7 +235,7 @@ export const InteractiveMetadataSidebar: React.FC<InteractiveMetadataSidebarProp
               {paper.license || 'Creative Commons CC-BY 4.0'}
             </span>
           </div>
-          {paper.verified && (
+          {paper.verification === 'verified' && (
             <div className="interactive-verified-row">
               <CheckCircle2 size={12} className="text-[var(--color-accent-2)]" />
               <span className="text-xs font-medium text-[var(--color-accent-2)]">Verified Archive Record</span>
