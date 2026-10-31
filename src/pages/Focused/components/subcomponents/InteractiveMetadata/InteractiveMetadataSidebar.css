@@ -1,0 +1,165 @@
+/* Interactive Metadata Sidebar Subcomponent Styles - Subtle and clean */
+
+.interactive-meta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.interactive-meta-tag {
+  font-family: var(--font-subtitle);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.interactive-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.interactive-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.interactive-meta-row__label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-subtitle);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.interactive-meta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.interactive-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.interactive-pill:hover {
+  border-color: var(--color-accent-1);
+  color: var(--color-accent-1);
+  transform: translateY(-1px);
+}
+
+.interactive-pill--genre {
+  background: color-mix(in srgb, var(--color-accent-1) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent-1) 25%, transparent);
+  color: var(--color-accent-1);
+  font-weight: 600;
+}
+
+.interactive-pill--genre:hover {
+  background: var(--color-accent-1);
+  color: #FFFFFF;
+}
+
+.pill-marker {
+  color: var(--color-accent-1);
+  font-weight: 700;
+}
+
+.pill-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.pill-arrow {
+  color: var(--color-accent-1);
+  transition: transform 0.2s ease;
+}
+
+.interactive-pill:hover .pill-arrow {
+  transform: translate(2px, -2px);
+}
+
+.interactive-keyword-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.725rem;
+  font-weight: 500;
+  background: color-mix(in srgb, var(--color-accent-2) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent-2) 20%, transparent);
+  color: var(--color-accent-2);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.interactive-keyword-pill:hover {
+  background: var(--color-accent-2);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.interactive-meta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.interactive-subtext {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.interactive-mini-btn {
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.65rem;
+  font-weight: 600;
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.interactive-mini-btn:hover {
+  background: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  color: #FFFFFF;
+}
+
+.interactive-meta-footer {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.interactive-license-row,
+.interactive-verified-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

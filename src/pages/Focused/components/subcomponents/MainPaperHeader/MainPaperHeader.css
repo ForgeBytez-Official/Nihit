@@ -1,0 +1,127 @@
+/* Main Paper Header Subcomponent Styles - Ultra-clean, editorial typography without chunky boxes or rainbow pills */
+
+.main-paper-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.main-paper-title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.main-paper-authors {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.main-paper-label {
+  font-family: var(--font-subtitle);
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.main-paper-authors__list {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.main-paper-author-item {
+  font-family: var(--font-subtitle);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.main-paper-author-name {
+  color: var(--text-primary);
+}
+
+.main-paper-author-mark {
+  color: var(--color-accent-1);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.main-paper-sep {
+  color: var(--text-muted);
+  margin-right: 0.35rem;
+}
+
+/* Metadata container holding both rows */
+.main-paper-meta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Top metadata row with 3 evenly spaced items */
+.main-paper-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.main-paper-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.main-paper-value--verified {
+  color: var(--color-accent-2);
+}
+
+.main-paper-value--unverified {
+  color: var(--text-muted);
+}
+
+.main-paper-meta-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-default);
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+/* Institution row style */
+.main-paper-institution-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-default);
+}
+
+@media (max-width: 640px) {
+  .main-paper-meta-divider {
+    display: none;
+  }
+
+  .main-paper-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+}

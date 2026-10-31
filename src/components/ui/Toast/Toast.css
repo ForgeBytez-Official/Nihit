@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Compact Minimalist Pill Toast System
+   Sliding directly from beneath the bottom-center SearchBar to bottom-right
+   ========================================================================== */
+
+.toast-viewport {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  z-index: 997;
+  /* Underneath searchbar (998) so it spawns from behind searchbar */
+  display: flex;
+  flex-direction: column-reverse;
+  /* New toasts stack neatly */
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+/* Individual Pill/Rounded Toast Item */
+.toast-item {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 14px 34px -6px rgba(42, 35, 32, 0.16),
+    0 3px 10px rgba(42, 35, 32, 0.08);
+  font-family: var(--font-subtitle);
+  position: relative;
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: max-content;
+  max-width: min(440px, calc(100vw - 3.5rem));
+}
+
+/* Sizing without subtitle: Exactly matches SearchBar height (44px) */
+.toast-item--compact {
+  height: 44px;
+  padding: 0 0.85rem 0 0.55rem;
+}
+
+/* Sizing with subtitle: slightly taller (52px) */
+.toast-item--expanded {
+  min-height: 52px;
+  padding: 0.45rem 0.95rem 0.45rem 0.65rem;
+}
+
+/* Icon Bubble: Circular container with soft inner glow */
+.toast-item__icon-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Text Content Area */
+.toast-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.toast-item__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.toast-item__message {
+  font-size: 0.5rem;
+  font-weight: 450;
+  line-height: 1.35;
+  opacity: 0.92;
+  white-space: nowrap;
+}
+
+/* Dismiss Close Button */
+.toast-item__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 0.15rem;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  color: inherit;
+}
+
+.toast-item__close:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ==============================================================
+   CURATED HARMONIOUS COLOR STYLES
+   ============================================================== */
+
+/* 1. Mode Switch: Terracotta / Rust gradient pill */
+.toast-item--mode {
+  background: linear-gradient(135deg, #B35435 0%, #A04426 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 14px 34px -4px rgba(179, 84, 53, 0.38),
+    0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.toast-item--mode .toast-item__icon-bubble {
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+}
+
+/* 2. Success: Sage / Forest Green gradient pill */
+.toast-item--success {
+  background: linear-gradient(135deg, #4A6B52 0%, #3B5742 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 14px 34px -4px rgba(74, 107, 82, 0.35),
+    0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.toast-item--success .toast-item__icon-bubble {
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+}
+
+/* 3. Warning: Warm Sand & Amber Ochre pill */
+.toast-item--warning {
+  background: linear-gradient(135deg, #D4A373 0%, #C38E5A 100%);
+  color: #2A2320;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 14px 34px -4px rgba(212, 163, 115, 0.38),
+    0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.toast-item--warning .toast-item__icon-bubble {
+  background: rgba(255, 255, 255, 0.4);
+  color: #2A2320;
+}
+
+/* 4. Urgent / Error: Deep Crimson Terracotta pill */
+.toast-item--urgent {
+  background: linear-gradient(135deg, #A83626 0%, #882214 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 14px 34px -4px rgba(168, 54, 38, 0.4),
+    0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.toast-item--urgent .toast-item__icon-bubble {
+  background: rgba(255, 255, 255, 0.24);
+  color: #FFFFFF;
+}
+
+/* 5. Info: Clean warm dark charcoal pill */
+.toast-item--info {
+  background: linear-gradient(135deg, #2A2320 0%, #1F1917 100%);
+  color: #F8F5F0;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 14px 34px -4px rgba(42, 35, 32, 0.3),
+    0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.toast-item--info .toast-item__icon-bubble {
+  background: rgba(255, 255, 255, 0.14);
+  color: #F8F5F0;
+}
+
+@media (max-width: 640px) {
+  .toast-viewport {
+    bottom: 4.8rem;
+    /* Above mobile search bar */
+    right: 1rem;
+    left: 1rem;
+    align-items: center;
+  }
+}

@@ -1,0 +1,189 @@
+/* Reading Elements Sidebar Subcomponent Styles - Outset Sticky Tabs */
+
+.reading-elements-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  position: relative;
+}
+
+/* Vertically aligned buttons outside the container on the left */
+.reading-elements-tabs-stack {
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+/* Individual tab sticking outside the left border of the card with vertical text layout */
+.reading-elements-outset-tab {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 0.45rem;
+  background: color-mix(in srgb, var(--bg-surface) 96%, transparent);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid var(--border-default);
+  border-left: none; /* due to 180deg rotation, visual left is physical right */
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-primary);
+  font-family: var(--font-subtitle);
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow:
+    -5px 6px 18px -2px rgba(42, 35, 32, 0.08),
+    -2px 2px 6px rgba(42, 35, 32, 0.04);
+  white-space: nowrap;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Button 1 (Focus Mode): Uses Accent 1 (Terracotta) */
+.reading-elements-outset-tab--focus {
+  border-right: 2px solid var(--color-accent-1);
+}
+
+.reading-elements-outset-tab--focus:hover {
+  background: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  color: #FFFFFF;
+  box-shadow:
+    -6px 8px 22px -2px color-mix(in srgb, var(--color-accent-1) 35%, transparent);
+}
+
+.reading-elements-outset-tab--focus.reading-elements-outset-tab--active {
+  background: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  color: #FFFFFF;
+  box-shadow:
+    -6px 8px 22px -2px color-mix(in srgb, var(--color-accent-1) 45%, transparent);
+}
+
+/* Button 2 (Deep Focus Mode): Uses Accent 2 (Sage Green) */
+.reading-elements-outset-tab--deep {
+  border-right: 2px solid var(--color-accent-2);
+}
+
+.reading-elements-outset-tab--deep:hover {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: #FFFFFF;
+  box-shadow:
+    -6px 8px 22px -2px color-mix(in srgb, var(--color-accent-2) 35%, transparent);
+}
+
+.reading-elements-outset-tab--deep.reading-elements-outset-tab--active {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: #FFFFFF;
+  box-shadow:
+    -6px 8px 22px -2px color-mix(in srgb, var(--color-accent-2) 45%, transparent);
+}
+
+.reading-elements-outset-tab__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reading-elements-outset-tab__label {
+  letter-spacing: 0.01em;
+}
+
+/* Sidebar inner content */
+.reading-elements-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reading-elements-label {
+  font-family: var(--font-subtitle);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.reading-elements-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reading-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.reading-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-subtitle);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.reading-action-btn--primary {
+  background: linear-gradient(135deg, var(--color-accent-1), color-mix(in srgb, var(--color-accent-1) 80%, var(--color-accent-3)));
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -3px color-mix(in srgb, var(--color-accent-1) 40%, transparent);
+}
+
+.reading-action-btn--primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.reading-action-btn--secondary {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.reading-action-btn--secondary:hover {
+  border-color: var(--color-accent-2);
+  color: var(--color-accent-2);
+  transform: translateY(-1px);
+}
+
+.reading-action-btn--subtle {
+  background: color-mix(in srgb, var(--text-primary) 3%, transparent);
+  border-color: var(--border-default);
+  color: var(--text-muted);
+}
+
+.reading-action-btn--subtle:hover {
+  border-color: var(--color-accent-1);
+  color: var(--color-accent-1);
+  background: color-mix(in srgb, var(--color-accent-1) 8%, transparent);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .reading-elements-outset-tab {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.725rem;
+  }
+}

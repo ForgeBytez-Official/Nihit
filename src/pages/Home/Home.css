@@ -1,0 +1,13 @@
+/* Home Page Styling */
+.page-home {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.page-home>* {
+  position: relative;
+  z-index: 1;
+}

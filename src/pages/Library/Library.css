@@ -1,0 +1,25 @@
+.page-library {
+  padding-bottom: 4rem;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Soft decorative accent behind the page */
+.page-library::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1200px);
+  height: 320px;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-accent-1) 8%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-library > * {
+  position: relative;
+  z-index: 1;
+}

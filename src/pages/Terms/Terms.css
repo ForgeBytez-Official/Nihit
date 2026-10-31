@@ -1,0 +1,116 @@
+/* Legal Pages Styling (Terms & Privacy) */
+.legal-page {
+  padding: 3.5rem 0 6rem;
+  background-color: var(--bg-primary);
+  min-height: calc(100vh - 120px);
+}
+
+.legal-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 48rem;
+  margin-bottom: 2.75rem;
+}
+
+.legal-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: fit-content;
+}
+
+.legal-page__back:hover {
+  color: var(--color-accent-1);
+  transform: translateX(-3px);
+}
+
+.legal-page__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent-1) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent-1) 25%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent-1);
+  width: fit-content;
+}
+
+.legal-page__title {
+  font-family: var(--font-title);
+  font-size: clamp(2.25rem, 4.4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.legal-page__subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.legal-page__card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  max-width: 52rem;
+  box-shadow: 0 16px 44px -10px rgba(42, 35, 32, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .legal-page__card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.legal-page__section h2 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.legal-page__section p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.legal-page__section a {
+  color: var(--color-accent-1);
+  text-decoration: underline;
+}
+
+.legal-page__list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.legal-page__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+

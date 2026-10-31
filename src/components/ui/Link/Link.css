@@ -1,0 +1,27 @@
+/* Link */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-accent-1);
+  text-underline-offset: 0.125rem;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 2px var(--color-accent-1);
+}
+
+.link--muted {
+  color: var(--text-muted);
+}
+
+.link--muted:hover {
+  color: var(--color-accent-1);
+}

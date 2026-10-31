@@ -1,0 +1,7 @@
+/* About Page Styles */
+.page-about {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding-bottom: 5rem;
+}

@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Focused Paper Page Modern Layout & Theme Styling
+   Clean, minimal container nesting with balanced hierarchy and responsive layout
+   ========================================================================== */
+
+.focused-page {
+  padding: 2.25rem 0 5rem;
+  background-color: var(--bg-primary);
+  min-height: calc(100vh - 120px);
+  position: relative;
+  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   Deep Focus & Full Screen Rules
+   ========================================================================== */
+body.deep-focus-active .layout > .navbar .navbar-subbar__center,
+body.deep-focus-active .layout > .navbar .navbar-subbar__right,
+body.deep-focus-active .layout > .footer {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(28px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease !important;
+}
+
+/* Navbar container and subbar smoothly hide at the top when scrolling down in Deep Focus */
+body.deep-focus-active.deep-focus-scrolled-down .layout > .navbar {
+  transform: translateY(-110%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease !important;
+}
+
+body.deep-focus-active .layout > .navbar {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+body.deep-focus-active {
+  background-color: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.focused-page--deep-focus {
+  padding: 3rem 0 6rem;
+  min-height: 100vh;
+}
+
+/* Enhanced immersive reading typography in Focus & Deep Focus modes */
+.focused-page--focus-mode .main-paper-title,
+.focused-page--deep-focus .main-paper-title {
+  font-size: clamp(2.35rem, 4.4vw, 3.25rem);
+  line-height: 1.18;
+}
+
+.focused-page--focus-mode .section-prose p,
+.focused-page--deep-focus .section-prose p {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  letter-spacing: -0.003em;
+}
+
+.focused-page--focus-mode .main-abstract-lead,
+.focused-page--deep-focus .main-abstract-lead {
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+/* ==========================================================================
+   Grid Layout: Main Area (left) + Sidebars (right)
+   ========================================================================== */
+.focused-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.75rem;
+  align-items: start;
+  transition: grid-template-columns 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1060px) {
+  .focused-layout {
+    grid-template-columns: minmax(0, 1fr) 330px;
+    align-items: start;
+  }
+
+  .focused-layout--focus-mode {
+    grid-template-columns: minmax(0, 940px);
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   Focus & Deep Focus Exit Floating Controls - Moved into modular components FocusMode & DeepFocusMode
+   ========================================================================== */
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+.focused-toast {
+  position: fixed;
+  top: 5.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--color-accent-2);
+  color: var(--text-primary);
+  font-family: var(--font-subtitle);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow:
+    0 10px 30px -5px color-mix(in srgb, var(--color-accent-2) 30%, transparent),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.focused-toast__icon {
+  color: var(--color-accent-2);
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA - Natural, editorial flow
+   ========================================================================== */
+.focused-main-area {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   SIDEBAR AREA - Fixed floating right position in Focus/Deep Focus & desktop sticky
+   ========================================================================== */
+.focused-sidebars {
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Focused Mode & Deep Focus Mode:
+   Sidebar container stays fixed at the right edge of viewport and slides smoothly offscreen
+   by exactly its width (100%), leaving its exit tab sticking out on the right viewport edge! */
+.focused-page--focus-mode .focused-sidebars,
+.focused-page--deep-focus .focused-sidebars {
+  position: fixed;
+  top: 5.5rem;
+  right: 0;
+  width: 320px;
+  max-width: 85vw;
+  z-index: 998;
+  transform: translateX(100%);
+  pointer-events: auto;
+}
+
+.focused-page--deep-focus .focused-sidebars {
+  top: 2rem;
+  z-index: 1001;
+}
+
+/* The sidebar inner column slides out smoothly without vanishing */
+.focused-page--focus-mode .focused-sidebars__column,
+.focused-page--deep-focus .focused-sidebars__column {
+  opacity: 0.95;
+  pointer-events: auto;
+}
+
+/* Desktop: Sidebar Column floats and sticks smoothly along viewport */
+@media (min-width: 1060px) {
+  .focused-sidebars {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5.25rem;
+  }
+}
+
+.focused-sidebars__column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  position: relative;
+}
+
+.focused-sidebar-item {
+  position: relative;
+}
+
+/* Paper Index card anchored in center of viewport */
+.focused-sidebar-item--index {
+  position: relative;
+  z-index: 5;
+}
+
+/* Common Card Styling for the 3 Sidebar Blocks */
+.focused-sidebar-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+  box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.025);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.focused-sidebar-card:hover {
+  border-color: var(--border-hover);
+}
+
+.focused-sidebar-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.focused-sidebar-card__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.focused-sidebar-card__title {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   404 Fallback
+   ========================================================================== */
+.focused-404 {
+  padding: 5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.focused-404__code {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent-1);
+}
+
+.focused-404__title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.focused-404__text {
+  font-family: var(--font-paragraph);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.focused-404__mono {
+  font-family: monospace;
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.focused-404__actions {
+  margin-top: 1rem;
+}
+
+.focused-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.focused-btn--primary {
+  background: var(--color-accent-1);
+  color: #FFFFFF;
+}
+
+.focused-btn--primary:hover {
+  background: color-mix(in srgb, var(--color-accent-1) 85%, black);
+}
+
+/* ==========================================================================
+   Mobile & Tablet Responsiveness
+   ========================================================================== */
+@media (max-width: 1059px) {
+  .focused-page {
+    padding: 1.5rem 0 3.5rem;
+  }
+
+  .focused-layout {
+    gap: 2rem;
+  }
+
+  .focused-sidebars {
+    order: 2;
+    position: static;
+  }
+
+  .focused-main-area {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .focused-page {
+    padding: 1.25rem 0 3rem;
+  }
+
+  .focused-mode-exit-pill,
+  .focused-deep-exit-pill {
+    top: auto;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}

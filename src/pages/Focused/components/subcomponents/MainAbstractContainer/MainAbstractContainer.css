@@ -1,0 +1,44 @@
+/* Abstract Container Subcomponent Styles - Minimal, elegant editorial layout without heavy box borders */
+
+.main-abstract-area {
+  padding: 0.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border-default);
+  scroll-margin-top: 6rem;
+}
+
+.main-abstract-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.main-abstract-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.main-abstract-rule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-default);
+}
+
+.main-abstract-prose {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-accent-2);
+}
+
+.main-abstract-lead {
+  font-family: var(--font-paragraph);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 400;
+}

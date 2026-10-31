@@ -1,0 +1,113 @@
+/* Back To Top Button with Circular Progress Indicator */
+.back-to-top-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--bg-surface) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-default) 80%, rgba(255, 255, 255, 0.3));
+  box-shadow: 
+    0 10px 24px -6px rgba(42, 35, 32, 0.08),
+    0 2px 6px rgba(42, 35, 32, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  color: var(--color-accent-1);
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.25s ease,
+              color 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.back-to-top-btn--visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.back-to-top-btn:hover {
+  background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
+  border-color: var(--color-accent-1);
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.06) !important;
+  box-shadow: 
+    0 12px 28px -4px color-mix(in srgb, var(--color-accent-1) 40%, transparent),
+    0 3px 8px rgba(42, 35, 32, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+}
+
+.back-to-top-btn:hover .back-to-top-btn__icon {
+  background-color: var(--color-accent-1);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.back-to-top-btn__svg {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.back-to-top-btn__track {
+  fill: none;
+  stroke: color-mix(in srgb, var(--border-default) 70%, transparent);
+}
+
+.back-to-top-btn__fill {
+  fill: none;
+  stroke: var(--color-accent-1);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-to-top-btn__icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.back-to-top-btn__tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  font-family: var(--font-subtitle);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--bg-surface-elevated) 90%, transparent);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top-btn:hover .back-to-top-btn__tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

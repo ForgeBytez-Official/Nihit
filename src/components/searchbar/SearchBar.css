@@ -1,0 +1,193 @@
+/* ==========================================================================
+   SearchBar Styling - Centered Bottom Frosted Glass Console
+   Smooth Slide-In & Deep Scroll-Down Hide with Sticking Peak
+   ========================================================================== */
+
+.searchbar-wrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: 90%;
+  max-width: 630px;
+  z-index: 998;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+/* Deeper hide when user scrolls down (slides down leaving only a subtle 3px top lip peeking) */
+.searchbar-wrapper--scrolled-down:not(.searchbar-wrapper--focused) {
+  transform: translate3d(-50%, calc(100% - 3px), 0);
+  opacity: 0.65;
+}
+
+.searchbar-wrapper--scrolled-down:not(.searchbar-wrapper--focused):hover {
+  /* Hovering the sticking rim slides it back into view without jitter */
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+}
+
+/* Main Pill Container - 95% Dense Opacity Glassmorphism */
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.85rem 0.55rem 1.15rem;
+  background: color-mix(in srgb, var(--bg-surface) 96%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-default) 90%, rgba(255, 255, 255, 0.6));
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 18px 44px -8px rgba(42, 35, 32, 0.16),
+    0 4px 14px -2px rgba(42, 35, 32, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset;
+  backdrop-filter: blur(40px) saturate(240%);
+  -webkit-backdrop-filter: blur(40px) saturate(240%);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: text;
+}
+
+.searchbar-wrapper--focused .searchbar-container {
+  border-color: var(--color-accent-1);
+  box-shadow:
+    0 22px 52px -10px color-mix(in srgb, var(--color-accent-1) 25%, transparent),
+    0 6px 20px rgba(42, 35, 32, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+  background: #FFFFFF;
+}
+
+.searchbar-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-1);
+  flex-shrink: 0;
+}
+
+.searchbar-icon {
+  stroke-width: 2.25;
+}
+
+/* Input element */
+.searchbar-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-subtitle);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.searchbar-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+/* Selected scope tag badge */
+.searchbar-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent-1) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent-1) 35%, transparent);
+  color: var(--color-accent-1);
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.searchbar-tag-badge__symbol {
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.searchbar-tag-badge__remove {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  opacity: 0.7;
+  padding: 0.1rem;
+  border-radius: 50%;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.searchbar-tag-badge__remove:hover {
+  opacity: 1;
+  background: color-mix(in srgb, var(--color-accent-1) 20%, transparent);
+}
+
+/* Clear query button */
+.searchbar-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.searchbar-clear-btn:hover {
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+/* Keyboard Shortcut Chip (Cmd/Ctrl + K) */
+.searchbar-shortcut-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-primary) 7%, transparent);
+  border: 1px solid var(--border-default);
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  user-select: none;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchbar-shortcut-badge:hover {
+  background: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  color: #FFFFFF;
+}
+
+.searchbar-shortcut-icon {
+  stroke-width: 2.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .searchbar-wrapper {
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .searchbar-container {
+    padding: 0.5rem 0.75rem 0.5rem 0.95rem;
+  }
+
+  .searchbar-shortcut-badge {
+    display: none;
+  }
+}

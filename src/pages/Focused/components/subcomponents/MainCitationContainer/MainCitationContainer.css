@@ -1,0 +1,109 @@
+/* Citation Container Subcomponent Styles */
+
+.main-citation-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.03);
+  scroll-margin-top: 6rem;
+}
+
+.main-citation-box__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.main-citation-box__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-citation-box__title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.main-citation-tabs {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  background: color-mix(in srgb, var(--text-primary) 6%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.main-citation-tab {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.main-citation-tab--active {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.main-citation-code {
+  background: color-mix(in srgb, var(--text-primary) 4%, var(--bg-primary));
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.825rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 0 1rem;
+}
+
+.main-citation-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.main-citation-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-subtitle);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--bg-surface);
+  border: 1px solid var(--color-accent-1);
+  color: var(--color-accent-1);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.main-citation-copy-btn:hover {
+  background: var(--color-accent-1);
+  color: #FFFFFF;
+}
+
+.main-citation-info {
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
