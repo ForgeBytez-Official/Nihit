@@ -108,7 +108,8 @@ export function Navbar() {
       className={cn(
         'navbar-wrapper',
         isScrolled ? 'navbar-wrapper--scrolled' : 'navbar-wrapper--unscrolled',
-        isScrollingDown && 'navbar-wrapper--hidden',
+        isScrollingDown && !mobileOpen && 'navbar-wrapper--hidden',
+        mobileOpen && 'navbar-wrapper--mobile-open',
       )}
     >
       <header className="navbar-container">

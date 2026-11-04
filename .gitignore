@@ -131,4 +131,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Private files
+internal.md
+
 >>>>>>> b6a95040f5e6bac05a016e182a74d12470226416
