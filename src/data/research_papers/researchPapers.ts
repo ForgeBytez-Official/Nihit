@@ -10,6 +10,22 @@
 
 import type { Paper } from '../../lib/paperTypes'
 
+// Direct image imports for papers (e.g. NowshinLaila_2020_Yield-permformance-of_JBAU.90309)
+// to guarantee production bundler asset URL resolution across all deployment environments
+import nowshinTable1 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-1-total-amount-of-nutrient-applied.png'
+import nowshinTable2 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-2-effect-of-variety-on-crop-characters.png'
+import nowshinTable3 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-3-effect-of-nutrient-management.png'
+import nowshinTable4 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-4-interaction-effects-of-variety.png'
+import nowshinChart1 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/chart-1-Interaction-effect-of-variety.png'
+
+const staticPaperImages: Record<string, string> = {
+  'table-1-total-amount-of-nutrient-applied.png': nowshinTable1,
+  'table-2-effect-of-variety-on-crop-characters.png': nowshinTable2,
+  'table-3-effect-of-nutrient-management.png': nowshinTable3,
+  'table-4-interaction-effects-of-variety.png': nowshinTable4,
+  'chart-1-Interaction-effect-of-variety.png': nowshinChart1,
+}
+
 type JsonModule = { default: Paper }
 
 const jsonGlob = import.meta.glob<JsonModule>('./**/*.json', { eager: true }) as Record<string, JsonModule>
@@ -23,11 +39,23 @@ function resolvePaperAssetUrl(paperDir: string, relativeOrAbsoluteSrc: string): 
   }
   // Remove leading ./ if present
   const cleanName = relativeOrAbsoluteSrc.replace(/^\.\//, '')
-  // Exact match with paperDir/cleanName
+
+  // 1. Check static direct imports first (guaranteed production resolution)
+  if (staticPaperImages[cleanName]) {
+    return staticPaperImages[cleanName]
+  }
+
+  // 2. Exact match with paperDir/cleanName or filename from glob
   const targetKey = `${paperDir}/${cleanName}`
-  for (const [key, url] of Object.entries(imgGlob)) {
+  for (const [key, rawUrl] of Object.entries(imgGlob)) {
     if (key === targetKey || key.endsWith(`/${cleanName}`)) {
-      return url
+      if (typeof rawUrl === 'string') {
+        return rawUrl
+      }
+      if (rawUrl && typeof rawUrl === 'object' && 'default' in rawUrl) {
+        return String((rawUrl as { default: unknown }).default)
+      }
+      return String(rawUrl ?? relativeOrAbsoluteSrc)
     }
   }
   return relativeOrAbsoluteSrc
