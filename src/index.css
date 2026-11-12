@@ -24,6 +24,12 @@
   --color-accent-3: #D4A373;
   /* Accent 3: Sand / Warm Ochre */
 
+  /* Author Role Special Marks (Brand Accents) */
+  --color-author-first: var(--color-accent-1);
+  /* First author mark (^): Terracotta / Rust */
+  --color-author-head: var(--color-accent-2);
+  /* Head author mark (*): Sage / Forest Green */
+
   /* Light Theme Surfaces & Text */
   --bg-primary: #F8F5F0;
   --bg-surface: #FFFFFF;

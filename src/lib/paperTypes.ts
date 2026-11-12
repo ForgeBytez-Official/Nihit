@@ -13,7 +13,7 @@ export interface Author {
 export interface Institution {
   name: string
   location?: string
-  authors: string[]
+  authors?: string[]
 }
 
 export interface Journal {
@@ -37,10 +37,13 @@ export interface PaperImage {
 export type SectionContentBlock = string | PaperImage
 
 export interface PaperSection {
-  id: string
-  title: string
+  id?: string
+  number?: string | number
+  title?: string
+  subtitle?: string
   level?: number
   content?: string | SectionContentBlock[]
+  subsections?: PaperSection[]
 }
 
 export interface PaperTable {
@@ -51,6 +54,8 @@ export interface PaperTable {
 }
 
 export interface PaperCitations {
+  source?: string
+  sourceCitation?: string
   apa?: string
   bibtex?: string
   [key: string]: string | undefined
@@ -66,7 +71,7 @@ export interface Paper {
   publishedDate?: string
   receivedDate?: string | null
   acceptedDate?: string | null
-  journal: Journal
+  journal?: Journal
   doi: string
   doiCode: string
   paperCode: string

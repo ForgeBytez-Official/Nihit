@@ -1,5 +1,7 @@
 import React from 'react'
 import type { Paper } from '../../../../../lib/paperTypes'
+import { FormattedAuthorName } from '../../../../../components/ui/AuthorMark/AuthorMark'
+import '../../../../../components/ui/AuthorMark/AuthorMark.css'
 import './MainPaperHeader.css'
 
 interface MainPaperHeaderProps {
@@ -18,12 +20,9 @@ export const MainPaperHeader: React.FC<MainPaperHeaderProps> = ({ paper }) => {
         <div className="main-paper-authors__list">
           {paper.authors.map((author, idx) => (
             <span key={author.name} className="main-paper-author-item">
-              <span className="main-paper-author-name">{author.name}</span>
-              {author.corresponding && (
-                <sup className="main-paper-author-mark" title="Corresponding Author">
-                  *
-                </sup>
-              )}
+              <span className="main-paper-author-name">
+                <FormattedAuthorName name={author.name} />
+              </span>
               {idx < paper.authors.length - 1 && (
                 <span className="main-paper-sep">,</span>
               )}

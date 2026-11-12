@@ -4,17 +4,17 @@ import {
   Tag,
   Calendar,
   Building2,
-  Barcode,
   ExternalLink,
   ShieldCheck,
   CheckCircle2,
-  FileCheck,
   Globe,
   Hash,
   Clock,
   Sparkles,
 } from 'lucide-react'
 import type { Paper } from '../../../../../lib/paperTypes'
+import { FormattedAuthorName } from '../../../../../components/ui/AuthorMark/AuthorMark'
+import '../../../../../components/ui/AuthorMark/AuthorMark.css'
 import './InteractiveMetadataSidebar.css'
 
 interface InteractiveMetadataSidebarProps {
@@ -66,12 +66,11 @@ export const InteractiveMetadataSidebar: React.FC<InteractiveMetadataSidebarProp
               {paper.authors.map(author => (
                 <Link
                   key={author.name}
-                  to={`/library?author=${encodeURIComponent(author.name)}`}
+                  to={`/library?author=${encodeURIComponent(author.name.replace(/[\^*]+$/, '').trim())}`}
                   className="interactive-pill"
                   title={`View all research by ${author.name}`}
                 >
-                  <span>{author.name}</span>
-                  {author.corresponding && <span className="pill-marker" title="Corresponding Author">*</span>}
+                  <FormattedAuthorName name={author.name} />
                 </Link>
               ))}
             </div>
@@ -124,26 +123,6 @@ export const InteractiveMetadataSidebar: React.FC<InteractiveMetadataSidebarProp
           </div>
         </div>
 
-        {/* Journal */}
-        {paper.journal?.name && (
-          <div className="interactive-meta-row">
-            <span className="interactive-meta-row__label">
-              <FileCheck size={12} />
-              <span>Journal Venue</span>
-            </span>
-            <Link
-              to={`/library?q=${encodeURIComponent(paper.journal.name)}`}
-              className="interactive-pill font-medium"
-              title={`Search library for ${paper.journal.name}`}
-            >
-              <span className="truncate max-w-[210px]">{paper.journal.name}</span>
-              {paper.journal.volume && (
-                <span className="pill-sub">Vol. {paper.journal.volume}</span>
-              )}
-            </Link>
-          </div>
-        )}
-
         {/* DOI */}
         {paper.doi && (
           <div className="interactive-meta-row">
@@ -168,35 +147,6 @@ export const InteractiveMetadataSidebar: React.FC<InteractiveMetadataSidebarProp
                   onClick={() => onCopyText(paper.doiCode || paper.doi, 'DOI')}
                   className="interactive-mini-btn"
                   title="Copy DOI to clipboard"
-                >
-                  Copy
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Site Paper Code */}
-        {paper.paperCode && (
-          <div className="interactive-meta-row">
-            <span className="interactive-meta-row__label">
-              <Barcode size={12} />
-              <span>Archive Code</span>
-            </span>
-            <div className="interactive-meta-actions">
-              <Link
-                to={`/library?q=${encodeURIComponent(paper.paperCode)}`}
-                className="interactive-pill font-mono text-xs"
-                title={`Filter by paper code ${paper.paperCode}`}
-              >
-                <span>{paper.paperCode}</span>
-              </Link>
-              {onCopyText && (
-                <button
-                  type="button"
-                  onClick={() => onCopyText(paper.paperCode, 'Paper Code')}
-                  className="interactive-mini-btn"
-                  title="Copy Paper Code"
                 >
                   Copy
                 </button>

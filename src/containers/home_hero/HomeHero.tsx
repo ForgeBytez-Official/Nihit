@@ -11,6 +11,8 @@ import {
 } from 'lucide-react'
 import { animFadeUp, animStaggerContainer } from '../../lib/animations'
 import { getAllPapers, getPaperCount, getGenres } from '../../data/research_papers/researchPapers'
+import { FormattedAuthorName } from '../../components/ui/AuthorMark/AuthorMark'
+import '../../components/ui/AuthorMark/AuthorMark.css'
 import './HomeHero.css'
 
 export function HomeHero() {
@@ -97,12 +99,17 @@ export function HomeHero() {
                   <span className="home-hero__spotlight-genre">{papers[0].genre}</span>
                   <h3 className="home-hero__spotlight-title">{papers[0].title}</h3>
                   <p className="home-hero__spotlight-authors">
-                    {papers[0].authors.map(a => a.name).join(', ')}
+                    {papers[0].authors.map((a, i) => (
+                      <span key={a.name}>
+                        {i > 0 && ', '}
+                        <FormattedAuthorName name={a.name} />
+                      </span>
+                    ))}
                   </p>
                   <div className="home-hero__spotlight-footer">
                     <div className="home-hero__spotlight-meta">
                       <Building2 size={13} />
-                      <span>{papers[0].journal.name} ({papers[0].year})</span>
+                      <span>{papers[0].journal?.name || papers[0].institutions?.[0]?.name || 'Scientific Archive'} ({papers[0].year})</span>
                     </div>
                     <Link to={`/library/${papers[0].id}`} className="home-hero__spotlight-link">
                       <span>Read Paper</span>

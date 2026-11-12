@@ -1,63 +1,65 @@
 // Lazy-loaded paper corpus barrel.
 //
 // JSON metadata lives at src/data/research_papers/<genre>/<paper-id>/<paper-id>.json
-// and the matching PDF at <genre>/<paper-id>/paper.pdf. Both are loaded via
-// import.meta.glob so the bundle never ships the full corpus eagerly.
+// and matching assets (PDFs, PNGs, etc.) live inside each paper's directory.
 //
-// PDFs are pulled in as asset URLs (as: 'url') — Vite copies them to dist and
-// returns a stable path — rather than inlined into JS, so a 200 KB paper stays
-// a 200 KB paper.
+// All paper assets are automatically discovered and resolved via Vite glob imports:
+// no manual import statements or hardcoded registries required!
 
-import type { Paper } from '../../lib/paperTypes'
-
-// Direct image imports for papers (e.g. NowshinLaila_2020_Yield-permformance-of_JBAU.90309)
-// to guarantee production bundler asset URL resolution across all deployment environments
-import nowshinTable1 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-1-total-amount-of-nutrient-applied.png'
-import nowshinTable2 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-2-effect-of-variety-on-crop-characters.png'
-import nowshinTable3 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-3-effect-of-nutrient-management.png'
-import nowshinTable4 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/table-4-interaction-effects-of-variety.png'
-import nowshinChart1 from './agriculture/NowshinLaila_2020_Yield-permformance-of_JBAU.90309/chart-1-Interaction-effect-of-variety.png'
-
-const staticPaperImages: Record<string, string> = {
-  'table-1-total-amount-of-nutrient-applied.png': nowshinTable1,
-  'table-2-effect-of-variety-on-crop-characters.png': nowshinTable2,
-  'table-3-effect-of-nutrient-management.png': nowshinTable3,
-  'table-4-interaction-effects-of-variety.png': nowshinTable4,
-  'chart-1-Interaction-effect-of-variety.png': nowshinChart1,
-}
+import type { Paper, PaperSection, SectionContentBlock } from '../../lib/paperTypes'
 
 type JsonModule = { default: Paper }
 
-const jsonGlob = import.meta.glob<JsonModule>('./**/*.json', { eager: true }) as Record<string, JsonModule>
-const pdfGlob = import.meta.glob<string>('./**/*.pdf', { as: 'url', eager: true }) as Record<string, string>
-const imgGlob = import.meta.glob<string>('./**/*.{png,jpg,jpeg,webp,svg}', { as: 'url', eager: true }) as Record<string, string>
+// Automatically discover all paper JSON files located in genre subdirectories:
+// ./<genre>/<paper-id>/<paper-id>.json (ignores root-level sample.json)
+const jsonGlob = import.meta.glob<JsonModule>('./*/*/*.json', { eager: true })
 
+// Automatically discover all paper PDFs as hashed static asset URLs
+const pdfGlob = import.meta.glob<string>('./**/*.pdf', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+
+// Automatically discover all paper figures and images as hashed static asset URLs
+const imgGlob = import.meta.glob<string>('./**/*.{png,jpg,jpeg,webp,svg,gif}', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+
+/**
+ * Resolve a relative image path (e.g. "./table-1.png" or "figure.png")
+ * against the paper's directory using Vite's eager asset glob.
+ */
 function resolvePaperAssetUrl(paperDir: string, relativeOrAbsoluteSrc: string): string {
-  // If it's already an http/https URL or starts with /, keep it
+  // If already an absolute / external URL or data URI, keep as is
   if (/^(https?:\/\/|\/|data:)/i.test(relativeOrAbsoluteSrc)) {
     return relativeOrAbsoluteSrc
   }
-  // Remove leading ./ if present
-  const cleanName = relativeOrAbsoluteSrc.replace(/^\.\//, '')
 
-  // 1. Check static direct imports first (guaranteed production resolution)
-  if (staticPaperImages[cleanName]) {
-    return staticPaperImages[cleanName]
+  const cleanName = relativeOrAbsoluteSrc.replace(/^\.\//, '')
+  const targetKey = `${paperDir}/${cleanName}`
+
+  // 1. Exact match with paperDir/filename in glob
+  if (imgGlob[targetKey]) {
+    return imgGlob[targetKey]
   }
 
-  // 2. Exact match with paperDir/cleanName or filename from glob
-  const targetKey = `${paperDir}/${cleanName}`
-  for (const [key, rawUrl] of Object.entries(imgGlob)) {
-    if (key === targetKey || key.endsWith(`/${cleanName}`)) {
-      if (typeof rawUrl === 'string') {
-        return rawUrl
-      }
-      if (rawUrl && typeof rawUrl === 'object' && 'default' in rawUrl) {
-        return String((rawUrl as { default: unknown }).default)
-      }
-      return String(rawUrl ?? relativeOrAbsoluteSrc)
+  // 2. Fallback: match by matching directory ending and filename
+  for (const [key, url] of Object.entries(imgGlob)) {
+    if (key.endsWith(`/${cleanName}`) && key.includes(paperDir.replace(/^\.\//, ''))) {
+      return url
     }
   }
+
+  // 3. Fallback: match by filename
+  for (const [key, url] of Object.entries(imgGlob)) {
+    if (key.endsWith(`/${cleanName}`)) {
+      return url
+    }
+  }
+
   return relativeOrAbsoluteSrc
 }
 
@@ -72,12 +74,10 @@ function genreFromPath(path: string): string {
 }
 
 function pdfUrlFor(id: string): string | undefined {
-  // First match: any PDF inside a directory named after this paper ID
   for (const [path, url] of Object.entries(pdfGlob)) {
     const parts = path.split('/')
     if (parts[parts.length - 2] === id) return url
   }
-  // Fallback: match by PDF basename matching ID
   for (const [path, url] of Object.entries(pdfGlob)) {
     const filename = path.split('/').pop()?.replace(/\.pdf$/i, '')
     if (filename === id) return url
@@ -85,17 +85,22 @@ function pdfUrlFor(id: string): string | undefined {
   return undefined
 }
 
-// Single source of truth: every paper found on disk, keyed by id.
-const paperById = new Map<string, Paper>()
-for (const [path, mod] of Object.entries(jsonGlob)) {
-  const id = idFromJsonPath(path)
-  const paper = mod.default
-  const paperDir = path.substring(0, path.lastIndexOf('/'))
+function generateSectionId(titleOrSubtitle: string): string {
+  return titleOrSubtitle
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
 
-  // Transform sections to resolve local image assets cleanly
-  const transformedSections = (paper.sections || []).map((sec) => {
-    if (!sec.content || !Array.isArray(sec.content)) return sec
-    const mappedContent = sec.content.map((item) => {
+function normalizeSection(sec: PaperSection, paperDir: string): PaperSection {
+  const displayTitle = sec.title || sec.subtitle || ''
+  const autoId = sec.id || generateSectionId(displayTitle || 'section')
+
+  // Transform content to resolve local image assets
+  let mappedContent = sec.content
+  if (Array.isArray(sec.content)) {
+    mappedContent = sec.content.map((item: SectionContentBlock) => {
       if (typeof item === 'object' && item !== null && item.type === 'image' && item.src) {
         return {
           ...item,
@@ -104,11 +109,35 @@ for (const [path, mod] of Object.entries(jsonGlob)) {
       }
       return item
     })
-    return {
-      ...sec,
-      content: mappedContent,
-    }
-  })
+  }
+
+  const mappedSubsections = (sec.subsections || []).map((sub: PaperSection) =>
+    normalizeSection(sub, paperDir)
+  )
+
+  return {
+    ...sec,
+    id: autoId,
+    number: sec.number,
+    title: sec.title || (sec.subtitle ? sec.subtitle : displayTitle),
+    subtitle: sec.subtitle,
+    content: mappedContent,
+    subsections: mappedSubsections.length > 0 ? mappedSubsections : undefined,
+  }
+}
+
+// Single source of truth: every paper found on disk, keyed by id.
+const paperById = new Map<string, Paper>()
+for (const [path, mod] of Object.entries(jsonGlob)) {
+  const id = idFromJsonPath(path)
+  // Ignore template/sample files
+  if (id === 'sample') continue
+
+  const paper = mod.default
+  const paperDir = path.substring(0, path.lastIndexOf('/'))
+
+  // Transform and normalize sections
+  const transformedSections = (paper.sections || []).map((sec) => normalizeSection(sec, paperDir))
 
   paperById.set(id, {
     ...paper,
@@ -119,7 +148,7 @@ for (const [path, mod] of Object.entries(jsonGlob)) {
   })
 }
 
-const papers = Array.from(paperById.values())
+export const papers: Paper[] = Array.from(paperById.values())
 
 export function getAllPapers(): Paper[] {
   return papers
@@ -138,7 +167,7 @@ export function getGenres(): string[] {
 }
 
 export function getPapersByGenre(genre: string): Paper[] {
-  return papers.filter(p => p.genre === genre)
+  return papers.filter(p => p.genre.toLowerCase() === genre.toLowerCase())
 }
 
 export function getPaperCount(): number {
@@ -152,7 +181,7 @@ export function searchPapers(query: string): Paper[] {
     p.title.toLowerCase().includes(q) ||
     p.authors.some(a => a.name.toLowerCase().includes(q)) ||
     p.keywords.some(k => k.toLowerCase().includes(q)) ||
-    p.journal.name.toLowerCase().includes(q) ||
+    (p.journal?.name && p.journal.name.toLowerCase().includes(q)) ||
     p.doiCode.toLowerCase().includes(q),
   )
 }

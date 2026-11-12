@@ -1,5 +1,7 @@
 import { Link } from '../../../components/ui/Link/Link'
 import type { Paper } from '../../../lib/paperTypes'
+import { FormattedAuthorName } from '../AuthorMark/AuthorMark'
+import '../AuthorMark/AuthorMark.css'
 import './PaperMeta.css'
 
 interface MetaRowProps {
@@ -24,14 +26,13 @@ export function PaperMeta({ paper }: { paper: Paper }) {
           <span key={a.name} className="paper-meta__author">
             {i > 0 && <span className="paper-meta__separator">, </span>}
             <Link
-              to={`/library?author=${encodeURIComponent(a.name)}`}
+              to={`/library?author=${encodeURIComponent(a.name.replace(/[\^*]+$/, '').trim())}`}
               className={cn(
                 'paper-meta__author-name',
                 a.corresponding && 'paper-meta__author-name--corresponding',
               )}
             >
-              {a.name}
-              {a.corresponding && <sup className="paper-meta__author-asterisk">*</sup>}
+              <FormattedAuthorName name={a.name} />
             </Link>
           </span>
         ))}

@@ -1,0 +1,90 @@
+{
+  "id": "AuthorYear_Short-Title_journal.code",
+  "genre": "agriculture",
+  "title": "",
+  "authors": [
+    { "name": "First Author^", "role": "author" },
+    { "name": "Head Author*", "role": "author", "corresponding": true }
+  ],
+  "institutions": [
+    {
+      "name": "",
+      "location": ""
+    }
+  ],
+  "year": 2024,
+  "publishedDate": "YYYY-MM-DD",
+  "doi": "https://doi.org/10.xxxx/xxxxx",
+  "doiCode": "10.xxxx/xxxxx",
+  "paperCode": "",
+  "license": "CC-BY-4.0",
+  "keywords": [],
+  "abstract": "",
+  "study": {
+    "location": "",
+    "period": "",
+    "sampleSize": 0,
+    "method": ""
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Introduction",
+      "content": [
+        "Paragraph text goes here...",
+        {
+          "type": "image",
+          "src": "./image-file-name.png",
+          "alt": "Image description",
+          "caption": "Image description"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Materials and Methods",
+      "subsections": [
+        {
+          "number": "2.1",
+          "subtitle": "Subsection Title",
+          "content": [
+            "Methodology details..."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Results and Discussion",
+      "subsections": [
+        {
+          "number": "3.1",
+          "subtitle": "Result Finding",
+          "content": [
+            "Discussion points..."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Conclusion",
+      "content": [
+        "Conclusion text goes here..."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "References",
+      "content": [
+        "Adhikari, A., Sarkar, M.A.R. 2018... Paste all reference text here as a single text block."
+      ]
+    }
+  ],
+  "pdf": "paper.pdf",
+  "source": "pdf",
+  "verification": "verified",
+  "citations": {
+    "source": "Author, A. and Author, B. 2024. Paper Title. Journal Name, Volume(Issue): Pages. https://doi.org/10.xxxx/xxxxx"
+  }
+}

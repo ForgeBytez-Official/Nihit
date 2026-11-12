@@ -1,0 +1,19 @@
+/* Author special marks styling */
+.author-special-mark {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 0.85em;
+  margin-left: 2px;
+  vertical-align: super;
+  user-select: none;
+}
+
+.author-special-mark--first {
+  color: var(--color-author-first, var(--color-accent-1));
+}
+
+.author-special-mark--head {
+  color: var(--color-author-head, var(--color-accent-2));
+}
+

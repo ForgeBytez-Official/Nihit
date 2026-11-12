@@ -17,6 +17,7 @@ import {
   MainAbstractContainer,
   MainPaperSections,
   MainCitationContainer,
+  type CitationTab,
   ReadingElementsSidebar,
   PaperIndexSidebar,
   InteractiveMetadataSidebar,
@@ -29,7 +30,7 @@ export default function FocusedPaper() {
   const paper = useMemo(() => getPaperById(id), [id])
 
   // UI state
-  const [activeCitationTab, setActiveCitationTab] = useState<'apa' | 'bibtex'>('apa')
+  const [activeCitationTab, setActiveCitationTab] = useState<CitationTab>('source')
   const [citationCopied, setCitationCopied] = useState(false)
   const [isFocusedMode, setIsFocusedMode] = useState(false)
   const [isDeepFocus, setIsDeepFocus] = useState(false)
@@ -271,12 +272,13 @@ export default function FocusedPaper() {
     }
   }
 
-  const handleCopyCitation = async (fmt: 'apa' | 'bibtex' = activeCitationTab) => {
+  const handleCopyCitation = async (fmt: CitationTab = activeCitationTab) => {
     const { [fmt]: text } = citationFormats(paper)
+    const label = fmt === 'source' ? 'Source' : fmt.toUpperCase()
     try {
-      await navigator.clipboard.writeText(text)
+      await navigator.clipboard.writeText(text || '')
       setCitationCopied(true)
-      showNotification(`${fmt.toUpperCase()} citation copied to clipboard!`, 'success')
+      showNotification(`${label} citation copied to clipboard!`, 'success')
       setTimeout(() => setCitationCopied(false), 2200)
     } catch {
       showNotification('Unable to copy citation', 'urgent')
@@ -339,11 +341,12 @@ export default function FocusedPaper() {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <MainCitationContainer
-                    currentCitation={currentCitation}
+                    currentCitation={currentCitation || ''}
                     activeTab={activeCitationTab}
                     copied={citationCopied}
                     onTabChange={setActiveCitationTab}
                     onCopy={() => handleCopyCitation(activeCitationTab)}
+                    hasSourceCitation={Boolean(paper.citations?.source || paper.citations?.sourceCitation)}
                   />
                 </motion.div>
               )}

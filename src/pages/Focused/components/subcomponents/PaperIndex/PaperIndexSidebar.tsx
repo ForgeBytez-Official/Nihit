@@ -14,18 +14,42 @@ export const PaperIndexSidebar: React.FC<PaperIndexSidebarProps> = ({
   activeSectionId,
   onSectionClick,
 }) => {
+  // Flatten sections and subsections for the index navigation
+  const flattenedSections: { id: string; title: string; numLabel?: string; isSub?: boolean }[] = []
+  sections.forEach((s, sIdx) => {
+    const sId = s.id || ''
+    const cleanId = sId.startsWith('section-') ? sId : `section-${sId}`
+    const sNum = s.number !== undefined && s.number !== null && s.number !== '' ? String(s.number) : undefined
+
+    flattenedSections.push({
+      id: cleanId,
+      title: s.title || s.subtitle || '',
+      numLabel: sNum,
+      isSub: false,
+    })
+    if (s.subsections && s.subsections.length > 0) {
+      s.subsections.forEach((sub, subIdx) => {
+        const subId = sub.id || ''
+        const cleanSubId = subId.startsWith('section-') ? subId : `section-${subId}`
+        const subNum = sub.number !== undefined && sub.number !== null && sub.number !== ''
+          ? String(sub.number)
+          : (sNum ? `${sNum}.${subIdx + 1}` : `${sIdx + 1}.${subIdx + 1}`)
+
+        flattenedSections.push({
+          id: cleanSubId,
+          title: sub.subtitle || sub.title || '',
+          numLabel: subNum,
+          isSub: true,
+        })
+      })
+    }
+  })
+
   // Always include key landmarks: Abstract -> Custom Sections from JSON -> Citation
-  const allSections: { id: string; title: string; level: number }[] = [
-    { id: 'section-abstract', title: 'Abstract', level: 0 },
-    ...sections.map(s => {
-      const cleanId = s.id.startsWith('section-') ? s.id : `section-${s.id}`
-      return {
-        id: cleanId,
-        title: s.title,
-        level: s.level ?? 1,
-      }
-    }),
-    { id: 'section-citation', title: 'Citation & Formats', level: 0 },
+  const allSections: { id: string; title: string; numLabel?: string; isSub?: boolean }[] = [
+    { id: 'section-abstract', title: 'Abstract', isSub: false },
+    ...flattenedSections,
+    { id: 'section-citation', title: 'Citation & Formats', isSub: false },
   ]
 
   // Deduplicate by id
@@ -45,7 +69,7 @@ export const PaperIndexSidebar: React.FC<PaperIndexSidebarProps> = ({
 
       <nav className="paper-index-nav" aria-label="Paper Section Table of Contents">
         <ul className="paper-index-list">
-          {uniqueSections.map((sec, idx) => {
+          {uniqueSections.map((sec) => {
             const isActive = activeSectionId === sec.id
             return (
               <li key={sec.id} className="paper-index-item">
@@ -53,14 +77,16 @@ export const PaperIndexSidebar: React.FC<PaperIndexSidebarProps> = ({
                   type="button"
                   onClick={() => onSectionClick(sec.id)}
                   className={`paper-index-link ${isActive ? 'paper-index-link--active' : ''} ${
-                    sec.level > 1 ? 'paper-index-link--nested' : ''
+                    sec.isSub ? 'paper-index-link--nested' : ''
                   }`}
                 >
                   <span className="paper-index-link__indicator">
                     {isActive ? (
                       <Bookmark size={11} className="fill-current" />
+                    ) : sec.numLabel ? (
+                      <span className="paper-index-link__num font-mono">{sec.numLabel}</span>
                     ) : (
-                      <span className="paper-index-link__num">0{idx + 1}</span>
+                      <span className="paper-index-link__dot" />
                     )}
                   </span>
                   <span className="paper-index-link__label">{sec.title}</span>

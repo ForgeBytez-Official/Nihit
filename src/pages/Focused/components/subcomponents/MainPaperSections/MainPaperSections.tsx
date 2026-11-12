@@ -1,5 +1,4 @@
 import React from 'react'
-import { FileText } from 'lucide-react'
 import type { Paper, PaperSection } from '../../../../../lib/paperTypes'
 import { parseReferences } from '../../../../../functions/references/parseReferences'
 import './MainPaperSections.css'
@@ -14,7 +13,7 @@ export const MainPaperSections: React.FC<MainPaperSectionsProps> = ({
   sections,
 }) => {
   const renderSectionProse = (section: PaperSection) => {
-    const sId = section.id.toLowerCase()
+    const sId = (section.id || section.title || section.subtitle || '').toLowerCase()
 
     // -----------------------------------------------------------------------
     // REFERENCES SECTION — always run through the smart parser first if there
@@ -105,70 +104,6 @@ export const MainPaperSections: React.FC<MainPaperSectionsProps> = ({
       )
     }
 
-    if (sId.includes('method') || sId.includes('material')) {
-      return (
-        <div className="section-prose">
-          <p>
-            The investigation was conducted following standard experimental protocols and randomized
-            sampling frameworks. Specific environmental and laboratory parameters were systematically
-            recorded throughout the duration of the trial to ensure reproducible findings:
-          </p>
-          <div className="section-parameters-grid">
-            <div className="section-parameter-item">
-              <span className="section-parameter-item__key">Study Protocol</span>
-              <span className="section-parameter-item__val">
-                {paper.study?.method || 'Standardized Randomized Complete Block Design (RCBD)'}
-              </span>
-            </div>
-            <div className="section-parameter-item">
-              <span className="section-parameter-item__key">Sample Framework</span>
-              <span className="section-parameter-item__val">
-                {paper.study?.sampleSize ? `${paper.study.sampleSize} monitored observation units` : 'Replicated experimental test plots with untreated controls'}
-              </span>
-            </div>
-            <div className="section-parameter-item">
-              <span className="section-parameter-item__key">Location</span>
-              <span className="section-parameter-item__val">
-                {paper.study?.location || paper.institutions?.[0]?.name || 'Standardized Experimental Station'}
-              </span>
-            </div>
-          </div>
-          <p>
-            Data were collected periodically and subjected to rigorous variance analysis. Differences between
-            individual treatment means were evaluated using standard post-hoc statistical packages at a 5%
-            significance threshold (p &lt; 0.05).
-          </p>
-        </div>
-      )
-    }
-
-    if (sId.includes('result') || sId.includes('disc')) {
-      return (
-        <div className="section-prose">
-          <p>
-            Significant variations were observed among the various experimental treatments. Quantitative
-            evaluations revealed measurable differences across physiological indicators, biomass yield, and
-            overall resilience under the given environmental conditions.
-          </p>
-          <div className="section-key-finding">
-            <div className="section-key-finding__title">
-              <FileText size={14} className="text-[var(--color-accent-1)]" />
-              <span>Key Empirical Finding</span>
-            </div>
-            <p className="section-key-finding__text">
-              The recorded responses under integrated treatment regimes demonstrated statistically superior
-              performance compared to isolated baseline controls, corroborating previous research conducted
-              across comparable climatic environments.
-            </p>
-          </div>
-          <p>
-            These findings underline the practical viability of optimizing input ratios, reinforcing both
-            ecological balance and productivity outcomes over successive evaluation cycles.
-          </p>
-        </div>
-      )
-    }
-
     if (sId.includes('conclu')) {
       return (
         <div className="section-prose">
@@ -207,35 +142,57 @@ export const MainPaperSections: React.FC<MainPaperSectionsProps> = ({
         </div>
       )
     }
-
-    return (
-      <div className="section-prose">
-        <p>
-          Detailed analysis and observations for <em>{section.title}</em>. This section presents comprehensive
-          data documentation, comparative literature references, and specialized analysis as originally authored
-          in the complete archival document.
-        </p>
-      </div>
-    )
   }
 
   return (
     <div className="main-paper-sections-flow">
       {sections.map((section, idx) => {
-        const domId = section.id.startsWith('section-') ? section.id : `section-${section.id}`
+        const domId = section.id ? (section.id.startsWith('section-') ? section.id : `section-${section.id}`) : `section-${idx}`
+        const displayTitle = section.title || section.subtitle || ''
+        const sectionNum = section.number !== undefined && section.number !== null && section.number !== '' ? String(section.number) : undefined
+
         return (
           <section
-            key={section.id}
+            key={section.id || idx}
             id={domId}
             className="main-paper-section"
             data-section-id={domId}
           >
             <div className="main-paper-section__header">
-              <span className="main-paper-section__idx">0{idx + 1}</span>
-              <h2 className="main-paper-section__title">{section.title}</h2>
+              {sectionNum && <span className="main-paper-section__idx">{sectionNum}</span>}
+              <h2 className="main-paper-section__title">{displayTitle}</h2>
             </div>
             <div className="main-paper-section__body">
               {renderSectionProse(section)}
+
+              {/* Render subsections if present */}
+              {section.subsections && section.subsections.length > 0 && (
+                <div className="main-paper-subsections-flow">
+                  {section.subsections.map((sub, subIdx) => {
+                    const subDomId = sub.id ? (sub.id.startsWith('section-') ? sub.id : `section-${sub.id}`) : `section-${idx}-${subIdx}`
+                    const subDisplayTitle = sub.subtitle || sub.title || ''
+                    const subNumber = sub.number !== undefined && sub.number !== null && sub.number !== ''
+                      ? String(sub.number)
+                      : (sectionNum ? `${sectionNum}.${subIdx + 1}` : `${idx + 1}.${subIdx + 1}`)
+                    return (
+                      <div
+                        key={sub.id || subIdx}
+                        id={subDomId}
+                        className="main-paper-subsection"
+                        data-section-id={subDomId}
+                      >
+                        <div className="main-paper-subsection__header">
+                          <h3 className="main-paper-section__subtitle">{subDisplayTitle}</h3>
+                          <span className="main-paper-subsection__num">{subNumber}</span>
+                        </div>
+                        <div className="main-paper-section__body">
+                          {renderSectionProse(sub)}
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           </section>
         )

@@ -74,6 +74,19 @@
   color: var(--text-muted);
 }
 
+.paper-index-link__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.paper-index-link--active .paper-index-link__dot {
+  background-color: var(--color-accent-2);
+  opacity: 1;
+}
+
 .paper-index-link--active .paper-index-link__num {
   color: var(--color-accent-2);
 }

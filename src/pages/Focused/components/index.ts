@@ -1,7 +1,7 @@
 export { MainPaperHeader } from './subcomponents/MainPaperHeader/MainPaperHeader'
 export { MainAbstractContainer } from './subcomponents/MainAbstractContainer/MainAbstractContainer'
 export { MainPaperSections } from './subcomponents/MainPaperSections/MainPaperSections'
-export { MainCitationContainer } from './subcomponents/MainCitationContainer/MainCitationContainer'
+export { MainCitationContainer, type CitationTab } from './subcomponents/MainCitationContainer/MainCitationContainer'
 
 export { ReadingElementsSidebar } from './subcomponents/ReadingElements/ReadingElementsSidebar'
 export { PaperIndexSidebar } from './subcomponents/PaperIndex/PaperIndexSidebar'

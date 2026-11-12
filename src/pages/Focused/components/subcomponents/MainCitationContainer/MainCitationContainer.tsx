@@ -2,12 +2,15 @@ import React from 'react'
 import { Quote, Copy, Check } from 'lucide-react'
 import './MainCitationContainer.css'
 
+export type CitationTab = 'source' | 'apa' | 'bibtex'
+
 interface MainCitationContainerProps {
   currentCitation: string
-  activeTab: 'apa' | 'bibtex'
+  activeTab: CitationTab
   copied: boolean
-  onTabChange: (tab: 'apa' | 'bibtex') => void
+  onTabChange: (tab: CitationTab) => void
   onCopy: () => void
+  hasSourceCitation?: boolean
 }
 
 export const MainCitationContainer: React.FC<MainCitationContainerProps> = ({
@@ -16,7 +19,19 @@ export const MainCitationContainer: React.FC<MainCitationContainerProps> = ({
   copied,
   onTabChange,
   onCopy,
+  hasSourceCitation = true,
 }) => {
+  const getTabLabel = (tab: CitationTab) => {
+    switch (tab) {
+      case 'source':
+        return 'Source Citation'
+      case 'apa':
+        return 'APA 7th'
+      case 'bibtex':
+        return 'BibTeX'
+    }
+  }
+
   return (
     <section
       id="section-citation"
@@ -29,6 +44,15 @@ export const MainCitationContainer: React.FC<MainCitationContainerProps> = ({
           <h2 className="main-citation-box__title">Citation</h2>
         </div>
         <div className="main-citation-tabs">
+          {hasSourceCitation && (
+            <button
+              type="button"
+              onClick={() => onTabChange('source')}
+              className={`main-citation-tab ${activeTab === 'source' ? 'main-citation-tab--active' : ''}`}
+            >
+              Source Citation
+            </button>
+          )}
           <button
             type="button"
             onClick={() => onTabChange('apa')}
@@ -58,9 +82,11 @@ export const MainCitationContainer: React.FC<MainCitationContainerProps> = ({
             title="Copy formatted citation"
           >
             {copied ? <Check size={14} /> : <Copy size={14} />}
-            <span>{copied ? 'Copied to Clipboard' : `Copy ${activeTab.toUpperCase()}`}</span>
+            <span>{copied ? 'Copied to Clipboard' : `Copy ${getTabLabel(activeTab)}`}</span>
           </button>
-          <span className="main-citation-info">Official Academic Citation Format</span>
+          <span className="main-citation-info">
+            {activeTab === 'source' ? 'Publisher / Source Citation' : 'Academic Citation Format'}
+          </span>
         </div>
       </div>
     </section>

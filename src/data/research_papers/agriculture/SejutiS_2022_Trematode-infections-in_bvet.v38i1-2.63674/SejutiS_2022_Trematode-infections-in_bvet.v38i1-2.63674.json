@@ -3,104 +3,220 @@
   "genre": "agriculture",
   "title": "Trematode infections in cattle and their vector snails in Rajshahi district in Bangladesh",
   "authors": [
-    { "name": "Sejuti S", "role": "author" },
-    { "name": "MA Alim", "role": "author", "corresponding": true },
-    { "name": "KMM Hossain", "role": "author" },
-    { "name": "MG Yasin", "role": "author" },
-    { "name": "SS Labony", "role": "author" },
-    { "name": "Anisuzzaman", "role": "author" },
-    { "name": "MMH Mondal", "role": "author" }
+    {
+      "name": "Sejuti S^",
+      "role": "author"
+    },
+    {
+      "name": "MA Alim*",
+      "role": "author",
+      "corresponding": true
+    },
+    {
+      "name": "KMM Hossain",
+      "role": "author"
+    },
+    {
+      "name": "MG Yasin",
+      "role": "author"
+    },
+    {
+      "name": "SS Labony",
+      "role": "author"
+    },
+    {
+      "name": "Anisuzzaman",
+      "role": "author"
+    },
+    {
+      "name": "MMH Mondal",
+      "role": "author"
+    }
   ],
   "institutions": [
     {
       "name": "Department of Parasitology, Faculty of Veterinary Science, Bangladesh Agricultural University",
-      "location": "Mymensingh-2202, Bangladesh",
-      "authors": ["Sejuti S", "MA Alim", "KMM Hossain", "MG Yasin", "SS Labony", "Anisuzzaman", "MMH Mondal"]
-    },
-    {
-      "name": "Department of Veterinary and Animal Sciences, Faculty of Veterinary and Animal Sciences, University of Rajshahi",
-      "location": "Rajshahi-6205, Bangladesh",
-      "authors": ["Sejuti S", "MA Alim", "KMM Hossain", "MG Yasin", "SS Labony", "Anisuzzaman", "MMH Mondal"]
+      "location": "Mymensingh-2202, Bangladesh"
     }
   ],
   "year": 2021,
   "publishedDate": "2021-06-30",
-  "receivedDate": null,
-  "acceptedDate": null,
-  "journal": {
-    "name": "The Bangladesh Veterinarian",
-    "abbreviation": "Bangladesh Veterinarian",
-    "volume": 38,
-    "issue": "1-2",
-    "pages": "24-32"
-  },
   "doi": "https://doi.org/10.3329/bvet.v38i1-2.63674",
   "doiCode": "10.3329/bvet.v38i1-2.63674",
   "paperCode": "bvet.v38i1-2.63674",
   "license": null,
-  "keywords": ["snail-borne trematodes", "Fasciola gigantica", "amphistomes", "Schistosoma spindale", "cattle", "Rajshahi", "epidemiology"],
-  "abstract": "The prevalence of snail-borne trematodes (SBTs) of cattle and their vector snails in Rajshahi district in Bangladesh were determined. A total of 380 faecal samples of cattle were collected and examined using Modified Stoll's Ova Counting Technique. Of the samples examined, 130 (34.2%) animals were found affected with SBTs, and the mean egg per gram of faeces (EPG) was 180.3 ± 0.8. The trematodal infections by Fasciola gigantica (1.1%), different amphistomes (32.9%), and Schistosoma spindale (0.8%) were detected among the infected cattle.",
-  "study": {
-    "location": "Puthia upazila, Rajshahi district, Bangladesh",
-    "period": "December 2012 to April 2013",
-    "sampleSize": 380,
-    "method": "Modified Stoll's Ova Counting Technique"
-  },
+  "keywords": [
+    "Trematode infections",
+    "Cattle",
+    "Vector snails"
+  ],
+  "abstract": "The prevalence of snail-borne trematodes (SBTs) of cattle and their vector snails in Rajshahi district in Bangladesh were determined. A total of 380 faecal samples of cattle were collected and examined using Modified Stoll’s Ova Counting Technique. Of the smaples examined, 130 (34.2%) animals were found affected with SBTs, and the mean egg per gram of faeces (EPG) was 180.3 ± 0.8. The trematodal infections by Fasciola gigantica (1.1%), different amphistomes (32.9%), and Schistosoma spindale (0.8%) were detected among the infected cattle. The effects of age, sex, breed, and body condition of the cattle on the prevalence of SBTs were determined. The infection rate was higher in young (> 2- 4 years) cattle (46.5%), followed by calves of ≤ 2 years (35.3%), and the lowest in older (> 4 years) cattle (20%). The prevalence of trematode infections was significantly (P<0.0001) higher in females (36.5%) than in male (28.3%) cattle. The prevalence was higher in cattle with poor body condition (48.7%) than in cattle with normal body condition (24.8%). Significantly (P<0.008) higher prevalence of trematode infection was recorded in indigenous cattle (41.2%) than in cross-bred cattle (26.9%). It is suggested that SBT infection is a common problem in cattle in Rajshahi district of Bangladesh. Particular emphasis should be given to proper management and regular deworming, and sustainable control measures should be developed for the prevention of SBT infection in cattle. (Bangl. vet. 2021. Vol. 38, No. 1 - 2, 24 – 32)",
   "sections": [
     {
-      "id": "introduction",
+      "number": 1,
       "title": "Introduction",
-      "level": 1,
       "content": [
-        "Snail-borne trematode (SBT) infections represent a significant global constraint on livestock production, resulting in chronic wasting, decreased milk yield, and substantial economic losses in tropical agro-ecosystems.",
-        "In Bangladesh, climatic factors such as high humidity, seasonal waterlogging, and abundant aquatic vegetation favor the proliferation of intermediate freshwater snail hosts, accelerating parasite transmission among grazing cattle."
+        "Parasitism is a major problem in cattle farming in Bangladesh. The ecological, geographical and climatic conditions of Bangladesh are conducive for parasitic infections (Hossain et al., 2004). The average rainfall of 90 mm, 75% humidity, and temperature range from 11oC to 35oC encourage survival of most parasites and intermediate hosts (Rahman, 1988). There is high prevalence of helminthiasis in domestic ruminants in Bangladesh (Samad, 2001). Snail-borne trematode (SBT) infections including fascioliasis, paramphistomiasis, and schistosomiasis are considered as economically important parasitic diseases. Fresh-water snails act as intermediate hosts of various helminth parasites. The vector snails are abundant in the low-lying marshy land, canals, ponds, and rivers. The recently developed irrigation system and the water logged irrigation drains and canals serve as an ideal habitat for the vector snails (Alim et al., 2007). The losses due to parasitism arise from mortality, retarded growth, lower output of work, and decreased milk yield and beef production (Faiz, 1972). The loss of production due to parasitic infection is estimated at up to 50% in Bangladesh (ADB, 1984) and the cost is estimated at 54 million Taka (67,40,000 US Dollars) (Islam, 1985). This study was designed to determine the prevalence of SBTs along with the snail intermediate hosts in some areas of Rajshahi district in Bangladesh."
       ]
     },
     {
-      "id": "materials-methods",
+      "number": 2,
       "title": "Materials and Methods",
-      "level": 1,
-      "content": [
-        "A cross-sectional epidemiological study was carried out in Puthia upazila within Rajshahi district. A total of 380 fresh fecal specimens were randomly gathered from cattle across varied age groups, body condition scores, and breeds.",
-        "Parasitological processing was conducted using Modified Stoll's Ova Counting Technique to identify eggs per gram (EPG) under high-power optical microscopy."
+      "subsections": [
+        {
+          "number": "2.1",
+          "subtitle": "Study area and periods",
+          "content": [
+            "Puthia upazila (sub-district) in Rajshahi district of Bangladesh was selected for this study. Fascioliasis, paramphistomiasis, and schistosomiasis in cattle were investigated by faecal sample examination from December 2012 to April 2013."
+          ]
+        },
+        {
+          "number": "2.2",
+          "subtitle": "Selection of cattle",
+          "content": [
+            "Three hundred and eighty indigenous and cross-bred cattle of six months and above were selected randomly. The ages were determined by questioning the farmers or by examining the teeth (Samad, 2008). The body condition was determined by visual observation. Animals were categorized into three age groups, calves (≤ 2 years), young (>2 - 4 years), and older cattle (> 4 years)."
+          ]
+        },
+        {
+          "number": "2.3",
+          "subtitle": "Collection of faecal samples",
+          "content": [
+            "The faecal samples were collected directly from the rectum. Samples were also collected from the top of the voided faecal mass immediately after defecation. A sample of about 20 g of faeces from each animal was kept in a polythene bag, tied, and labelled carefully with all relevant documents."
+          ]
+        },
+        {
+          "number": "2.4",
+          "subtitle": "Examination of faecal samples",
+          "content": [
+            "The faecal samples were examined by direct smear method. For counting the eggs per gram (EPG) of faeces, the Modified Stoll’s Egg Counting Technique was followed as described by Thienpont et al. (1986). In brief, the faecal sample was mixed well, 3g of faeces was taken in 100 ml graduated beaker and 1% sodium hydroxide solution was added up to 45 ml mark. Small glass beads were added and the solution was mixed thoroughly by a magnetic stirrer and strained with a coffee strainer. The strained mixture was again shaken, and 0.15 ml of mixture was transferred with a 1 ml pipette onto a glass slide and covered with a cover slip. The slide was placed under a microscope and the eggs were identified. The number of eggs on the slide was multiplied by 100 to get EPG of faeces."
+          ]
+        },
+        {
+          "number": "2.5",
+          "subtitle": "Snail collection and examination",
+          "content": [
+            "A total of 200 aquatic snails were collected from pools, canals, ponds, beels, irrigation channels, and rice fields and 70 snails were collected from the river Baranai. The snails were taken in polythene bags containing water to the laboratory, washed in running tap water and cleaned with soft brush. The snails were identified as described by Malek and Cheng (1974) and Brown (1980)."
+          ]
+        },
+        {
+          "number": "2.6",
+          "subtitle": "Study of soil",
+          "content": [
+            "At least 100 g of soil was collected from different parts of a particular habitat, dried and mixed thoroughly, and the nature of the soil was determined by Brady (1974). pH of the soil was determined by Glass Electrode pH Meter as described by Black (1965)."
+          ]
+        },
+        {
+          "number": "2.7",
+          "subtitle": "Study of water",
+          "content": [
+            "The water transparency, current, and depth were recorded. At least 60 ml of water from each habitat was carried to the laboratory in plastic or glass bottles and pH was determined as above (Black, 1965)."
+          ]
+        },
+        {
+          "number": "2.8",
+          "subtitle": "Statistical analysis",
+          "content": [
+            "Statistical analyses were carried out by Statistical Package for Social Science (SPSS, version 20) using Z-test and Chi-square (χ2) test. Odds ratio was calculated (Schlesselman, 1982)."
+          ]
+        }
       ]
     },
     {
-      "id": "results-discussion",
+      "number": 3,
       "title": "Results and Discussion",
-      "level": 1,
-      "content": [
-        "Overall prevalence of SBTs was 34.2%. Amphistomes exhibited the dominant infection rate at 32.9%, followed by Fasciola gigantica (1.1%) and Schistosoma spindale (0.8%).",
-        "Significantly higher infection rates were detected in female cattle, animals with poor body condition scores, and indigenous local breeds grazing near marshland water bodies."
+      "subsections": [
+        {
+          "number": "3.1",
+          "subtitle": "Overall prevalence of snail-borne trematode infections in cattle",
+          "content": [
+            "A total of 380 faecal samples were examined, of which 130 (34.2%) were infected with one or more species of SBTs, Fasciola gigantica, amphistomes, and Schistosoma spindale. Four cattle (1.1%) were infected with F. gigantica, 125 (32.9%) with amphistomes, and three (0.8%) with S. spindale. The EPG for F. gigantica, amphistomes, and S. spindale were 125 ± 10.8 (100-200), 183.2 ± 0.9 (100-600), and 133.3 ± 15.7 (100-200), respectively (Table 1)."
+          ]
+        },
+        {
+          "number": "3.2",
+          "subtitle": "Sex-related prevalence of snail-borne trematode infections in cattle",
+          "content": [
+            "The prevalence of trematode infection in female cattle was 36.5% and in males it was 28.3%. The prevalence of amphistome infection in females was 35% and in males 27.4%. The prevalence of fascioliasis was 1.5% in females; however, no F. gigantica infection was detected in the male cattle. The infection with S. spindale was 0.7% in females and 0.9% in males. In females, the EPG for F. gigantica, amphistomes, and S. spindale were 125 ± 10.8 (100-200), 183.3 ± 1.2 (100-600), and 150.0 ± 25.0 (100-200), respectively (Table 2)."
+          ]
+        },
+        {
+          "number": "3.3",
+          "subtitle": "Age-related prevalence of snail-borne trematode infections in cattle",
+          "content": [
+            "The prevalence of trematode infection was 35.3% in calves (≤ 2 years), 46.5% in young (> 2 - 4 years), and 20% in the adult (> 4 years) cattle. Fascioliasis was 1.2% in calves, 0.6% in young cattle, and 1.4% in adult cattle. Amphistome infection was found in 32.9% of calves, 45.2% of young, and 19.3% adult cattle. Schistosomiasis was seen in 2.4% of calves and 0.6% of young cattle but none in adult cattle. The EPG for F. gigantica, amphistomes, and S. spindale were 150 ± 25.0 (100-200), 185.7 ± 4.3 (100-600), and 100.0 ± 0.0 (100), respectively in calves and 172.9 ± 1.3 (100-400), 100 ± 00.0 (100), and 100 ± 00.0 (100), respectively in young cattle. The EPG were 100 ± 00.0 (100) and 211.1 ± 5.6 (100-600) for F. gigantica and amphistomes, respectively in adult cattle (Table 3)."
+          ]
+        },
+        {
+          "number": "3.4",
+          "subtitle": "Body condition and prevalence of snail-borne trematode infection in cattle",
+          "content": [
+            "The prevalence of SBT infection was 48.7% in poor body conditioned cattle and 24.8% in cattle with normal body condition. In poor body conditioned cattle, the prevalence of F. gigantica was 1.3% and amphistomes was 45.3%. In normal body conditioned cattle, the prevalence of F. gigantica was 0.9% and amphistomes was 24.8%. No Schistosoma infection was detected in normal body conditioned cattle. The EPG for F. gigantica, amphistomes, and S. spindale were 150 ± 25.0 (100-200), 176.5 ± 1.6 (100-600), and 133.3 ± 15.7 (100-200), respectively in poor body conditioned cattle. In normal body conditioned cattle the EPG for F. gigantica and amphistomes were 100 ± 00.0 (100) and 188.1 ± 1.9 (100-600), respectively (Table 4)."
+          ]
+        },
+        {
+          "number": "3.5",
+          "subtitle": "Prevalence of snail-borne trematode infection in different breeds of cattle",
+          "content": [
+            "The prevalence of SBT infection in indigenous cattle was 41.2% and in cross-bred cattle 27.9%. The prevalence of F. gigantica infection was 1.0% in indigenous and 1.1% in cross-bred cattle. The prevalence of amphistomes was 39.2% in indigenous and 26.3% in cross-bred cattle. The prevalence of S. spindale was 1.0% in indigenous and 0.5% in cross-bred cattle. The EPG for F. gigantica, amphistomes, and S. spindale were 150 ± 25.0 (100-200), 171.1 ± 1.4 (100-600), and 100 ± 00.0 (100), respectively in indigenous cattle and 100 ± 00.0 (100), 202 ± 2.5 (100-600), and 200 ± 00.0 (200), respectively in cross-bred cattle (Table 5).",
+            {
+              "type": "image",
+              "src": "./table-1-Overall-prevalence-of-snail.png",
+              "alt": "Table 1. Overall prevalence of snail-borne trematode infections in cattle"
+            }
+          ]
+        },
+        {
+          "number": "3.6",
+          "subtitle": "The prevalence of vector snails and their habitats",
+          "content": [
+            "The vector snails Lymnaea auricularia var rufescens and Lymnaea luteola were found in clear transparent slow flowing water with vegetation. The snails were more in the rice fields under irrigation system, irrigation channels, and ponds containing clear water. However, L. luteola were found in stagnant and slightly turbid water. The snail, Indoplanorbis exustus were found in clear as well as turbid water with abundant fresh or decaying vegetation. All these snail species were found in water with pH from 7.2 to 7.4. The snails, L. auricularia, L. luteola, and I. exustus were abundant in loamy clay or sandy clay soil. These snails were also found in habitats with clay soil. All these snail species were found in soil with pH 6.4 to 6.9.",
+            {
+              "type": "image",
+              "src": "./table-2-Sex-related-prevalence.png",
+              "alt": "Table 2. Sex-related prevalence of snail-borne trematode infections in cattle"
+            },
+            "The prevalence of SBTs in cattle was recorded as high as 34.2% at Puthia upazila in Rajshahi district of Bangladesh. This finding is consistent with the finding of Sarker et al (2021) who reported 37.6% trematodal infections in cattle in Boalia upazila of Rajshahi. An overall 1.1% infection with F. gigantica was recorded. Rahman et al., (1972) and Rahman et al. (2019) recorded 8.4% and 8.87% prevalence of fascioliasis in cattle in Mymensingh and north-western Baring Tract of Bangladesh, respectively. The present finding is lower than that of Rahman and Mondal (1983) who observed that over half of the cattle (53%) population were affected with fascioliasis in Bangladesh. An overall 32.9% infection with amphistomes was recorded in this study. This result is lower than the reports of Rahman and Mondal (1983) who recorded 21.6% amphistomiasis in cattle in Bangladesh. Islam and Samad (1989), Mondal et al., (2003) and Rahman et al. (2019) described 46.3%, 100% and 66.8% amphistomiasis, respectively in cattle in Bangladesh. In this study, an overall 0.8% infection with S. spindale was recorded. Similarly, Singh et al. (2009), and Gadre et al. (2007) showed 4.4%, and 3% infections with S. spindale in cattle, respectively. The variations in the results of different trematode infections with the earlier reports might be due to the differences in the sample size, selection of samples, breed, period, and place of study and availability of the snail hosts.",
+            {
+              "type": "image",
+              "src": "./table-3-Age-wise-prevalence.png",
+              "alt": "Table 3. Age-wise prevalence of snail-borne trematode infections in cattle"
+            },
+            {
+              "type": "image",
+              "src": "./table-4-Body-condition-and-prevalence.png",
+              "alt": "Table 4. Body condition and prevalence of snail-borne trematode infection in cattle"
+            },
+            "Fascioliasis was recorded only in female (1.5%) cattle. Previously Ibrahim (2004) showed that Fasciola infection is more common in female cattle than in males. Prevalence of infection with amphistomes was higher (36.5%) in females than in males (28.3%). In case of S. spindale infection, no notable variation was found between male (0.9%) and female (0.7%) cattle.",
+            {
+              "type": "image",
+              "src": "./table-5-Breed-wise-prevalence.png",
+              "alt": "Table 5. Breed-wise prevalence of snail-borne trematode infection in cattle"
+            },
+            "The higher percentage of infection in the female except Schistosoma may be due to the alteration in the physiological condition of the animals during pregnancy and lactation. Lloyd (1983) reported that higher level of prolactin and progesterone make females more susceptible to any infections. The prevalence of snail-borne trematode infection was significantly higher in the young and in calves than in the adult cattle. The highest prevalence of F. gigantica infection was in the age group of >4 years (1.4%). It is similar to the report of Rahman and Mondal (1983) who recorded heavier infections in cattle of 2-3 years of age than in cattle of <2 years. Chowdhury et al. (1994) reported higher rate of infection in cattle of 1-3 years of age (24.7%) followed by cattle above 3 years of age (23.6%). The prevalence of infection with amphistomes was higher in the age group of >2 - 4 years (45.2%). This finding is similar to the report of Rahman et al. (2019) who recorded 55.9% amphistomiasis in adult cattle of 2 years of age. S. spindale infection had the highest prevalence in age group ≤ 2 years (2.4%). The variation in infection rate in different age groups is difficult to explain but it might be due to the exposure of animals to infection, creating an immune response. The prevalence of SBTs infections in poor body conditioned cattle was significantly higher (48.7%) than in normal body conditioned cattle (24.8%). This finding coincides with the findings of Pachauri (1995) and Alim et al. (2004) in buffaloes. Malnourished animals are more susceptible to any parasitic infection as they are immune- compromised (Lapage, 1956). There was significantly higher rate of trematode infections in local zebu cattle (41.2%) than in the Holstein-Friesian cross-bred cattle (26.9%). Usually the indigenous cattle are more resistant to parasitic and other diseases than the exotic or cross-bred cattle. The farmers rear cross-bred cattle to get more milk and meat and pay more attention to them for feeding and healthcare aspects than to the low yielding indigenous cattle. Moreover, the indigenous cattle are usually allowed to graze freely in the field that make them more exposed to the trematodal infections. All these factors might have contribution to the lower rate of infection in crossbred cattle than in indigenous cattle."
+          ]
+        }
       ]
     },
     {
-      "id": "conclusions",
+      "number": 4,
       "title": "Conclusions",
-      "level": 1,
       "content": [
-        "Snail-borne trematodes remain highly endemic among bovine herds in Rajshahi. Regular strategic anthelmintic therapy alongside snail control measures is imperative to minimize transmission risks."
+        "Through faecal sample examination, an overall prevalence of 34.2% infection with SBT was detected in cattle in Puthia upazila in Rajshahi district of Bangladesh, where F. gigantica, amphistomes, and S. spindale were prevalent. SBT infection was significantly affected by sex, age, and body condition of the cattle. It is essential to reduce the economic losses due to trematode infection in cattle with good veterinary health care services."
       ]
     },
     {
-      "id": "references",
+      "number": 5,
       "title": "References",
-      "level": 1,
       "content": [
-        "1. Alim, M. A., et al. (2012). Epidemiology of gastrointestinal parasites in cattle of Bangladesh. Bangladesh Veterinary Journal, 46(1-4), 18-26.",
-        "2. Sejuti, S., et al. (2022). Snail-borne trematode infections in cattle of Rajshahi district, Bangladesh. The Bangladesh Veterinarian, 38(1-2), 24-32."
+        "ADB 1984: Asian development bank production year book, volume-25. Alim MA, Islam MK, Karim MJ, Mondal MMH 2004: Fascioliasis and biliary amphistomiasis in buffaloes in Bangladesh. Bangladesh Veterinary Journal 38 1-10. Alim MA, Islam MK, Karim MJ, Mondal MMH 2007: Gymnocephalus cercarid infection in Lymnaeid snails. Bangladesh Veterinarian 24 18-26. Black CA 1965: Methods of Soil Analysis. Publication No.9. Agronomy. American society of Agronomy, In: Publisher Madison, Wisconsis, USA. pp. 920. Brady NC 1974: The Nature and Properties of Soil, 8th edn. Eurasia Publishing House (Private Ltd.). Ram Nagar, New Delhi. pp. 48-49. Brown DS 1980: Freshwater Snails of Africa and their Medical Importance, Taylor and Francis Ltd. 10-14 Macklin Street, London WC2B 5 NF. pp 487. Chowdhury SMZH, Mondal MMH, Islam FMS, Taimur MJFA, Biswas HR, Ershaduzzaman M 1994: Prevalence of fascioliasis in cattle in Savar, Dhaka. Indian Veterinary Journal 71 121-123. Faiz MA 1972: Report on investigation in to the epidemiology of parasitic disease in East Pakistan. In: Activities on the Research section of Directorate of Livestock Services Bangladesh, 1968-1972. Gadre AS 2007: Seasonal population dynamics of gastrointestinal helminths in dairy animals of central zone of Vidarbha region. North East Veterinarian 4 78-80. Garrels G 1975: Gastro-intestinal parasitic infestation of cattle in some villages of Dhaka and Tangail district in Bangladesh. Bangladesh Veterinary Journal 9 9-10. Hossain MJ, Amin M, Mostofa M, Sharif M, Khalid SMA 2004: Efficacy of levanid against natural gastrointestinal nematodiasis and paramphistomiasis in sheep. Bangladesh Veterinary Journal 21 70-73. Ibrahim MA 2004: Epidemiological studies on fascioliasis in the Beni-Suef Governorate. Veterinary Medical Journal 52 507-515. Islam KS 1985: Present Situation of Livestock and Poultry Diseases in Bangladesh. Bangladesh Poshusampad Unnayan Neeti, BARC. pp. 48-128. Islam MA, Samad MA 1989: Efficacy of commercial anthelmintics against mixed infection of fascioliasis and amphistomiasis in cattle. Bangladesh Veterinarian 6 27-32. Lapage G 1956: Veterinary Parasitology. 1st ed. Oliver and Boyd, London. Lloyd S 1983: Effects of pregnancy and lactation upon infection. Veterinary Immunopathology 4 153-176. Malek EA, Cheng TC 1974: Medical and Economic Malacology. Academic press. New York London. pp. 35-71. Mondal MMH, Alim MA, Shahiduzzaman M, Farjana T, Islam MK 2003: Epidemiological investigation of amphistomiasis in ruminants in Bangladesh. Bangladesh Agricultural University Journal 1 81-86. Pachauri SP 1995: Clinico-biochemical profiles in fascioliasis in buffaloes. Buffalo Bulletin 14 7-10. Rahman MA, Ali KM, Rahman A 1972: Incidence of diseases of cattle in Mymensingh. Bangladesh Veterinary Journal 6 25-30. Rahman AR, Alim MA, Hossain MM, Yasin MG, Alam MZ, Hatta T, Anisuzzaman, Tsuji N, Mondal MMH 2019: Snail-borne trematodiasis in cattle in Barind Tract of Bangladesh, an overlooked problem. Japanese Journal of Veterinary Parasitology 18 53- 64. Rahman MH 1988: Problems of parasitic diseases among domesticated ruminants in Bangladesh. Bangladesh Veterinarian 12 1-4. Rahman MH, Mondal MMH 1983: Helminth parasites of cattle (Bos indicus) in Bangladesh. Indian Journal Parasitology 7 173-174. Samad MA 2001: Epidemiological studies on gastro-intestinal parasitosis in calves under traditional management in Bangladesh. Bangladesh Veterinary Journal 35 9-18. Samad MA 2008: Animal Husbandry and Veterinary Science, LEP Publication. No. 11, BAU campus, Mymensingh, Bangladesh. pp. 244-245. Sarker C, Akter M, Kayser A, Asgar MA, Mollah ML 2021: Prevalence of gastrointestinal parasitic infection in cattle and goat at Boalia upazila in Rajshahi district of Bangladesh. Asian Journal of Medical and Biological Research 7 367-374. Schlesselman GV 1982: Case-Control Studies. 1st edn, Oxford University Press, New York. pp. 174-177. Singh A, Srivastava S, Shkhar C, Singh J 2009: Prevalence of trematodes in bovines and snails. Indian Veterinary Journal 86 206-207. Thienpont D, Rochette F, Vanparijs OFJ 1986: Diagnosing helminthiasis by coprological examination, 2nd edn, Janssen Research Foundation, Beerse, Belgium. pp. 29-41."
       ]
     }
-  ],
-  "tables": [
-    { "id": "t1", "label": "Table 1", "title": "Overall prevalence of snail-borne trematode infections in cattle", "page": 27 },
-    { "id": "t2", "label": "Table 2", "title": "Sex-related prevalence of snail-borne trematode infections in cattle", "page": 28 },
-    { "id": "t3", "label": "Table 3", "title": "Age-wise prevalence of snail-borne trematode infections in cattle", "page": 29 },
-    { "id": "t4", "label": "Table 4", "title": "Body condition and prevalence of snail-borne trematode infection in cattle", "page": 29 },
-    { "id": "t5", "label": "Table 5", "title": "Breed-wise prevalence of snail-borne trematode infection in cattle", "page": 30 }
   ],
   "acknowledgement": "This research work was supported by the BAS-USDA, Project No. PALS-LS 07 to M. M. H Mondal.",
   "pdf": "paper.pdf",
   "source": "pdf",
-  "verified": true
+  "verified": true,
+  "citations": {
+    "source": "Sejuti, S., Alim, M. A., Hossain, K. M. M., Yasin, M. G., Labony, S. S., Anisuzzaman and Mondal, M. M. H. 2021. Trematode infections in cattle and their vector snails in Rajshahi district in Bangladesh. The Bangladesh Veterinarian, 38(1-2): 24–32. https://doi.org/10.3329/bvet.v38i1-2.63674"
+  }
 }

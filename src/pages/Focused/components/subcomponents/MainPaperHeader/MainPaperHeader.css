@@ -116,12 +116,32 @@
 
 @media (max-width: 640px) {
   .main-paper-meta-divider {
-    display: none;
+    display: inline-block;
+    height: 20px;
+    margin: 0 0.25rem;
   }
 
   .main-paper-meta-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.85rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .main-paper-meta-col {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .main-paper-meta-col .main-paper-label {
+    font-size: 0.65rem;
+  }
+
+  .main-paper-meta-col .main-paper-value {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

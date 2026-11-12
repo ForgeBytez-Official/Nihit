@@ -4,12 +4,13 @@
   "title": "Yield performance of aromatic fine rice as influenced by integrated use of vermicompost and inorganic fertilizers",
   "authors": [
     {
-      "name": "Nowshin Laila",
+      "name": "Nowshin Laila^",
       "role": "author"
     },
     {
-      "name": "Md. Abdur Rahman Sarkar",
-      "role": "author"
+      "name": "Md. Abdur Rahman Sarkar*",
+      "role": "author",
+      "corresponding": true
     },
     {
       "name": "Swapan Kumar Paul",
@@ -17,60 +18,38 @@
     },
     {
       "name": "Afrina Rahman",
-      "role": "author",
-      "corresponding": true
+      "role": "author"
     }
   ],
   "institutions": [
     {
       "name": "Department of Agronomy, Faculty of Agriculture, Bangladesh Agricultural University",
-      "location": "Mymensingh 2202, Bangladesh",
-      "authors": [
-        "Nowshin Laila",
-        "Md. Abdur Rahman Sarkar",
-        "Swapan Kumar Paul",
-        "Afrina Rahman"
-      ]
+      "location": "Mymensingh 2202, Bangladesh"
     }
   ],
   "year": 2020,
   "publishedDate": "2020-06-30",
-  "receivedDate": "2020-03-03",
-  "acceptedDate": "2020-04-27",
-  "journal": {
-    "name": "Journal of Bangladesh Agricultural University",
-    "abbreviation": "JBAU",
-    "volume": 18,
-    "issue": 2,
-    "pages": "260-265",
-    "issnPrint": "1810-3030",
-    "issnOnline": "2408-8684"
-  },
   "doi": "https://doi.org/10.5455/JBAU.90309",
   "doiCode": "10.5455/JBAU.90309",
   "paperCode": "JBAU.90309",
   "license": "CC-BY-4.0",
   "keywords": [
+    "Aromatic fine rice",
     "Vermicompost",
-    "Fertilizer",
-    "Integrated nutrient management",
-    "Aromatic rice",
-    "Variety"
+    "Inorganic fertilizers"
   ],
   "abstract": "Yield performance of various aromatic rice varieties needed to be assessed by different nutrient management practices before promoting a suitable integrated nutrient management for aromatic rice production in Bangladesh. Therefore, an experiment was conducted at the Agronomy Field Laboratory, Bangladesh Agricultural University, Mymensingh during July 2017 to December 2017 tostudy the combined effect of vermicompost with inorganic fertilizers on the yield and yieldcontributing characters of aromatic fine rice varieties. The experiment comprised three varieties viz.BRRI dhan34, Binadhan-13 and Kalizira and five nutrient managements viz. control (no applicationof manures and fertilizer), recommended dose of inorganic fertilizers ( i.e. 150, 95, 70, 60, 12 kg ha-1of Urea, TSP, MOP, Gypsum and Zinc Sulphate respectively), vermicompost @ 3 t ha-1, 25% lessthan recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1, 50 % less thanrecommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1. The experiment was laid out ina randomized complete block design with three replications. Result showed that, yield and yieldcomponents of aromatic fine rice were significantly influenced by variety, nutrient management andinteraction of variety and nutrient management. In case of variety, the highest and the lowest value ofgrain yield (3.89, 2.80 t ha-1) and straw yield (5.29, 4.03 t ha-1) were found in Binadhan-13 and Kalizira, respectively. In case of nutrient managements, the highest yield and yield component wereobtained from 50% less than the recommended dose of inorganic fertilizers + vermicompost @ 3 t ha1 treatment. The highest number of total tillers hill-1, effective tillers hill-1, number of grains panicle-1 might be a promising practice for aromatic fine rice cultivation. ",
   "sections": [
     {
-      "id": "introduction",
+      "number": 1,
       "title": "Introduction",
-      "level": 1,
       "content": [
         "Rice (Oryza sativa L.) is the large scale cultivated crop which provides half of the daily food for one of every three persons on the earth (Sangeetha et al. 2013). It is consumed as the staple food and has been given the highest priority in meeting the demand of the everincreasing population in Bangladesh. It has been reported that the production of milled rice reached around 33.803 million tons in the FY 2016-17 (BBS, 2017). Among the total rice production, amon rice occupies 13.48 million tons in 2016-2017 (BBS, 2017) and aromatic rice constitutes 12.50 % of the total transplanted aman rice (Roy et. al. 2018) which has greater potential to attract rice consumer and boost up the economic condition of the rice grower in the developing countries. Bangladesh has a bright prospect for exporting fine rice and thereby earning foreign exchange. But majority of the aromatic rice cultivars are low yielding and the national average aromatic rice yield is rather low which is 3.04 t ha-1 (Sinha et al. 2018). Besides the genetic constituents of aromatic rice varieties, lack of appropriate management practices could be responsible for low yield. Among these management practices, lack of improved variety and judicious use of fertilizers are the main reasons. In Bangladesh, nutrient mining, depletion of soil organic matter and reduction in soil aggregates have been identified as the reasons of yield stagnation or decline in the productivity of crops (Rahman and Yakupitiyage, 2006) and these are increasing day by day. Use of fertilizer is an essential component of modern farming (Prodhan, 1992) but extensive and improper use of chemical fertilizers in the soil causes soil degradation in an alarming level. To overcome the situation, soil organic matter has long been suggested as the single most important indicator of soil fertility (Haynes, 2005). But, many research findings have shown that neither inorganic nor organic source can alone result in sustainable productivity (Parihar et al. 2015). So, the best remedy for soil fertility management is a combination of both organic and inorganic fertilizers where inorganic fertilizer provides nutrients and the organic fertilizers increases soil organic matter and improve soil structure as well as ameliorate the buffering capacity of soil. In this concern, vermicomposting with earthworms has been recognized as a composting technique that transforms complex organic substances into stabilized humus like product (Benitez et al. 2000) and helps to convert them in to valuable soil amendment and source of plant nutrients. To get the maximum benefit from aman rice, it is essential to develop appropriate package of practices for successful cultivation and yield maximization. Among the various cultural practices, suitable combination of variety along with appropriate vermicompost and inorganic fertilizer rate is necessary for yield maximization. In this study, attempts have been made to test the possibility of optimizing and improving the yield of aromatic fine rice by exploring different integrated nutrient management practices and different aromatic rice cultivars."
       ]
     },
     {
-      "id": "Materials and Methods",
+      "number": 2,
       "title": "Materials and Methods",
-      "level": 1,
       "content": [
         "The research work was conducted at the Agronomy Field Laboratory, Bangladesh Agricultural University (BAU), Mymensingh. The experimental field belongs to the non-calcareous dark grey floodplain soil under the Agro-ecological Zone of the Old Brahmaputra Floodplain (AEZ-9) (UNDP and FAO, 1988) located at 24.75° N latitude and 90.50°E longitude at an elevation of 18 m above the sea level. The field was a medium high land with flat and well drained condition with the pH value, organic matter, total nitrogen, available phosphorus (P2O5) and potassium of the soil ranged from 5.9-6.5, 0.93%, 0.13%, 16.3 ppm and 0.28%, respectively (Rahman, 2018). The experiment consists of two factors; Factor A: rice cultivars viz. BRRI dhan34, BINAdhan13 and Kalizira; Factor B: nutrient management viz. Control (no application of manures and fertilizers), recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60, 12 kg ha-1 of Urea, TSP, MoP, Gypsum, Zinc Sulphate, respectively) (FRG, 2012), vermicompost (i.e. Organic carbon 11.4-13.5%, Nitrogen 0.84-1.58%, Phosphorous 0.56-1.51%, potassium 0.80-0.90%, Sulfur 0.52-0.55%, Zinc 0.01% , Calcium 0.68-0.72%) @ 3 t ha-1, 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1, 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 (Table 1). The experiment was laid out in randomized complete block design with three replications. The size of the unit plot was 10 m2  (4 m × 2.5 m). The sprouted seeds were sown in the nursery bed on 10 July 2017. The main field was prepared by power tiller with three times ploughing and cross ploughing followed by laddering. The land was fertilized as per treatment specifications. The whole amount of manures and triple superphosphate, muriate of potash, gypsum and zinc sulphate were applied at final land preparation as per treatment. Urea was applied in three equal splits at 15, 30 and 45 days after transplanting (DAT). The seedlings were uprooted and immediately transferred to the main field on 10 August, 2017. Seedlings were transplanted at the rate of three seedlings hill-1 , maintaining a spacing of 25 cm× 15 cm. Intercultural operations were done as and when necessary. When 80- 90% of the panicles turned into golden yellow color, the crop was assessed to attain maturity. Five hills (excluding border hills and central 2.0 m × 2.5 m harvest area) were selected randomly from each unit plot for recording data. An area of central 2.0 m × 2.5 m was selected from each plot to record the yield of grain and straw. The three varieties were harvested at different dates. Harvesting of BRRI dhan34, Binadhan-13 and Kalizira were done on 10 December, 23 December and 31 December 2017, respectively. Grains were then sun dried at 14% moisture level and cleaned. The straw was also sun dried properly. Finally, the yield of grain and straw plot-1 were recorded and converted to t ha-1. Data were collected on plant height (cm), number of total tillers plant-1, number of effective tillers plant-1, panicle length (cm), number of grains panicle-1, number of sterile spikelets panicle-1, 1000-grain weight (g), grain yield (t ha-1), straw yield (t ha-1), harvest index (%). The collected data were compiled and tabulated in proper from and subjected to statistical analysis. Data were analyzed using the analysis of variance technique with the help of computer package program MSTAT-C and mean differences were adjudged by Duncan’s Multiple Range Test (DMRT) (Gomez and Gomez, 1984). ",
         {
@@ -82,86 +61,74 @@
       ]
     },
     {
-      "id": "Results and Discussion",
+      "number": 3,
       "title": "Results and Discussion",
-      "level": 1,
-      "content": [
-        "Different yield and yield contributing characters of aromatic rice differed significantly due to varietal differences except panicle length (Table 2). The tallest plant (149.81 cm) was found in Kalizira while the shortest plant (138.98 cm) was found in BRRI dhan34. The highest number of total and effective tillers hill-1 (7.97 and 6.84, respectively) was observed in Binadhan13 and the lowest (6.89 and 5.62, respectively) was observed in Kalizira. Effect of variety on total and effective tillers hill-1 was also reported by Meshenji et al. (2018) and Ali et al. (2018) who observed that number of total and effective tillers hill-1 differed among the varieties. It might be due to varietal character or heredity. The highest number of grains panicle-1 (141.69) was produced by Binadhan-13 variety while the lowest number of grains panicle-1 (98.33) was produced by Kalizira variety. The highest number of sterile spikelets panicle-1 (26.80) was recorded in Kalizira variety and the lowest (14.98) was observed in Binadhan-13 variety. The highest weight of 1000-grain (13.74 g) was recorded in Binadhan-13 variety and the lowest (11.33 g) was found in Kalizira variety. It might be because of 1000-grain weight is a varietal character and it varies from variety to variety. Sarkar et al. (2014) found the similar highest and lowest 1000-grain weight in terms of Binadhan-13 and Kalizira rice. The highest grain and straw yield (3.89 t ha-1 and 5.29 t ha-1, respectively) was produced by Binadhan-13 while the lowest grain and straw yield (2.80 t ha-1 and 4.03 t ha-1, respectively) was produced by Kalizira. This might be due to the fact that Binadhan13 produced the highest number of grains panicle-1 and heaviest 1000-grain which ultimately contributed to the highest grain yield in Binadhan-13. Adhikari et al. (2018) as well as Uppu and Shiv (2019) reported that grain yield of aromatic fine rice was significantly affected by variety. The highest harvest index (42.32%) was observed in Binadhan-13 variety and the lowest (40.93%) was observed in Kalizira variety. ",
+      "subsections": [
         {
-          "type": "image",
-          "src": "./table-2-effect-of-variety-on-crop-characters.png",
-          "alt": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice",
-          "caption": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice"
-        },
-        "The plant height varied significantly due to different nutrient managements (Table 3). The tallest plant (150.80 cm) was found in 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha -1 which was statically similar to 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1. Variation in the number of total and effective tillers hill-1 might be due to the different nutrient management. The highest number of total and effective tillers hill-1 (8.40 and 7.35, respectively) was observed in 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment and the lowest one (6.18 and 4.84, respectively) was observed in control. It is due to the enhanced and continuous supply of nutrients by the combination of vermicompost and inorganic fertilizer which led to better tiller production. Sarkar et al. (2016) and Islam et al. (2013) found similar result that integrated nutrient management had significant effect on total and effective tillers hill-1. The longest panicle (24.81) was observed in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment which was statistically identical to recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc sulphate, respectively) and 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. The shortest panicle (19.17 cm) was found in control which shows statistically similar result with vermicompost @ 3 t ha-1 treatment. The highest number of grains panicle-1 (134.50) was observed in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha -1 treatment and the lowest number of grains panicle-1 (104.50) was found in control which was statistically identical to vermicompost @ 3 t ha-1 treatment. Combined application of organic and inorganic fertilizers influences number of grains panicle-1 which was reported by Jahan et al. (2017). The highest number of sterile spikelets panicle-1 (22.59) was observed in control which was statistically similar to vermicompost @ 3 t ha-1 and recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc sulphate, respectively) treatment. The lowest one (16.60) was found in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment which was statistically similar to 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. Different nutrient managements had significant effect on grain and straw yield. The highest grain and straw yield (4.04 t ha-1 and 5.42 t ha-1 , respectively) was obtained in 50% less than recommended dose of inorganic fertilizer +  vermicompost @ 3 t ha-1 treatment and the lowest grain and straw yield (2.66 t ha-1 and 3.83 t ha-1, respectively) was obtained in control. During the growth period control treated plots suffered from inadequate nutrient so it produced lower grain and straw. The increased yield in 50% less than recommended dose of inorganic fertilizers + vermicompost @ 3 t ha-1 treatment might be due to the supremacy of the combination of vermicompost and inorganic fertilizer which lies in the fact that it can supply the nutrients in soluble form for a quite longer period by not allowing the entire nutrient into solution which minimize fixation and precipitation. So, integrated nutrient management might allowed the plant roots to compete with loss mechanisms and absorb more nutrients leading to better yield by producing highest effective tillers hill-1 and grains panicle-1. Similar variation due to nutrient management was reported by Saha et al. (2014). Straw yield of fine rice was influenced by combined application of organic and inorganic fertilizers (Jahan et al., 2017). The highest harvest index (42.65%) was found in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment. The lowest harvest index (41.05 %) was found in control treatment which was statistically identical to recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc Sulphate, respectively), vermicompost @ 3 t ha-1 and 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. ",
-        {
-          "type": "image",
-          "src": "./table-3-effect-of-nutrient-management.png",
-          "alt": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice",
-          "caption": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice"
+          "number": "3.1",
+          "subtitle": "Varietal differences on yield contributing characters and yield",
+          "content": [
+            "Different yield and yield contributing characters of aromatic rice differed significantly due to varietal differences except panicle length (Table 2). The tallest plant (149.81 cm) was found in Kalizira while the shortest plant (138.98 cm) was found in BRRI dhan34. The highest number of total and effective tillers hill-1 (7.97 and 6.84, respectively) was observed in Binadhan13 and the lowest (6.89 and 5.62, respectively) was observed in Kalizira. Effect of variety on total and effective tillers hill-1 was also reported by Meshenji et al. (2018) and Ali et al. (2018) who observed that number of total and effective tillers hill-1 differed among the varieties. It might be due to varietal character or heredity. The highest number of grains panicle-1 (141.69) was produced by Binadhan-13 variety while the lowest number of grains panicle-1 (98.33) was produced by Kalizira variety. The highest number of sterile spikelets panicle-1 (26.80) was recorded in Kalizira variety and the lowest (14.98) was observed in Binadhan-13 variety. The highest weight of 1000-grain (13.74 g) was recorded in Binadhan-13 variety and the lowest (11.33 g) was found in Kalizira variety. It might be because of 1000-grain weight is a varietal character and it varies from variety to variety. Sarkar et al. (2014) found the similar highest and lowest 1000-grain weight in terms of Binadhan-13 and Kalizira rice. The highest grain and straw yield (3.89 t ha-1 and 5.29 t ha-1, respectively) was produced by Binadhan-13 while the lowest grain and straw yield (2.80 t ha-1 and 4.03 t ha-1, respectively) was produced by Kalizira. This might be due to the fact that Binadhan13 produced the highest number of grains panicle-1 and heaviest 1000-grain which ultimately contributed to the highest grain yield in Binadhan-13. Adhikari et al. (2018) as well as Uppu and Shiv (2019) reported that grain yield of aromatic fine rice was significantly affected by variety. The highest harvest index (42.32%) was observed in Binadhan-13 variety and the lowest (40.93%) was observed in Kalizira variety. ",
+            {
+              "type": "image",
+              "src": "./table-2-effect-of-variety-on-crop-characters.png",
+              "alt": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice",
+              "caption": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice"
+            }
+          ]
         },
         {
-          "type": "image",
-          "src": "./table-4-interaction-effects-of-variety.png",
-          "alt": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice",
-          "caption": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice"
+          "number": "3.2",
+          "subtitle": "Effect of nutrient management on yield contributing characters and yield",
+          "content": [
+            "The plant height varied significantly due to different nutrient managements (Table 3). The tallest plant (150.80 cm) was found in 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha -1 which was statically similar to 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1. Variation in the number of total and effective tillers hill-1 might be due to the different nutrient management. The highest number of total and effective tillers hill-1 (8.40 and 7.35, respectively) was observed in 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment and the lowest one (6.18 and 4.84, respectively) was observed in control. It is due to the enhanced and continuous supply of nutrients by the combination of vermicompost and inorganic fertilizer which led to better tiller production. Sarkar et al. (2016) and Islam et al. (2013) found similar result that integrated nutrient management had significant effect on total and effective tillers hill-1. The longest panicle (24.81) was observed in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment which was statistically identical to recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc sulphate, respectively) and 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. The shortest panicle (19.17 cm) was found in control which shows statistically similar result with vermicompost @ 3 t ha-1 treatment. The highest number of grains panicle-1 (134.50) was observed in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha -1 treatment and the lowest number of grains panicle-1 (104.50) was found in control which was statistically identical to vermicompost @ 3 t ha-1 treatment. Combined application of organic and inorganic fertilizers influences number of grains panicle-1 which was reported by Jahan et al. (2017). The highest number of sterile spikelets panicle-1 (22.59) was observed in control which was statistically similar to vermicompost @ 3 t ha-1 and recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc sulphate, respectively) treatment. The lowest one (16.60) was found in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment which was statistically similar to 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. Different nutrient managements had significant effect on grain and straw yield. The highest grain and straw yield (4.04 t ha-1 and 5.42 t ha-1 , respectively) was obtained in 50% less than recommended dose of inorganic fertilizer +  vermicompost @ 3 t ha-1 treatment and the lowest grain and straw yield (2.66 t ha-1 and 3.83 t ha-1, respectively) was obtained in control. During the growth period control treated plots suffered from inadequate nutrient so it produced lower grain and straw. The increased yield in 50% less than recommended dose of inorganic fertilizers + vermicompost @ 3 t ha-1 treatment might be due to the supremacy of the combination of vermicompost and inorganic fertilizer which lies in the fact that it can supply the nutrients in soluble form for a quite longer period by not allowing the entire nutrient into solution which minimize fixation and precipitation. So, integrated nutrient management might allowed the plant roots to compete with loss mechanisms and absorb more nutrients leading to better yield by producing highest effective tillers hill-1 and grains panicle-1. Similar variation due to nutrient management was reported by Saha et al. (2014). Straw yield of fine rice was influenced by combined application of organic and inorganic fertilizers (Jahan et al., 2017). The highest harvest index (42.65%) was found in 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment. The lowest harvest index (41.05 %) was found in control treatment which was statistically identical to recommended dose of inorganic fertilizer (i.e. 150, 95, 70, 60 and 12 kg ha-1 of Urea, TSP, MoP, Gypsum and Zinc Sulphate, respectively), vermicompost @ 3 t ha-1 and 25% less than recommended dose of inorganic fertilizer + vermicompost @ 1.5 t ha-1 treatment. ",
+            {
+              "type": "image",
+              "src": "./table-3-effect-of-nutrient-management.png",
+              "alt": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice",
+              "caption": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice"
+            }
+          ]
         },
-        "Interaction of variety and nutrient management had no significant effect on plant height, panicle length, sterile spikelets panicle-1 , 1000-grain weight and harvest index (Table 4). There was significant variation in total tillers hill-1, number of effective tillers hill-1, number of grains panicle-1, grain yield and straw yield due to interaction between variety and nutrient management. The highest number of total and effective tillers hill-1 (9.22 and 8.26, respectively) was produced in Binadhan13 with 50% less than recommended dose of inorganic fertilizers + vermicompost @ 3 t ha-1 treatment, while the lowest number of total and effective tillers hill-1 (5.86 and 4.46, respectively) was produced in Kalizira × control treatment. The highest number of grains panicle-1 (169.8) was produced by Binadhan-13 with 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest number of grains panicle-1 (91.85) was produced by Kalizira × control treatment. The highest grain yield (4.71 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + Vermicompost @ 3 t ha-1 treatment, while the lowest grain (2.31 t ha-1) was produced in Kalizira with Control treatment (Fig. 1). Higher rice yield might be due to the beneficial effect of combination of organic and inorganic fertilizer which offers a steady nutrient release compared to only inorganic fertilizer. This phenomenon allows plants to higher nutrient uptake which resulted in the greater source accumulation and efficient translocation of photosynthates into the sink as indicated by higher yield attributes. The highest straw yield (6.20 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest straw yield (3.43 t ha-1) was produced in Kalizira with Control treatment. ",
         {
-          "type": "image",
-          "src": "./chart-1-Interaction-effect-of-variety.png",
-          "alt": "Chart 1. Interaction effect of variety and nutrient management on grain yield of aromatic fine rice"
+          "number": "3.3",
+          "subtitle": "Interaction effect of variety and nutrient management on yield contributing characters and yield",
+          "content": [
+            {
+              "type": "image",
+              "src": "./table-4-interaction-effects-of-variety.png",
+              "alt": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice",
+              "caption": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice"
+            },
+            "Interaction of variety and nutrient management had no significant effect on plant height, panicle length, sterile spikelets panicle-1 , 1000-grain weight and harvest index (Table 4). There was significant variation in total tillers hill-1, number of effective tillers hill-1, number of grains panicle-1, grain yield and straw yield due to interaction between variety and nutrient management. The highest number of total and effective tillers hill-1 (9.22 and 8.26, respectively) was produced in Binadhan13 with 50% less than recommended dose of inorganic fertilizers + vermicompost @ 3 t ha-1 treatment, while the lowest number of total and effective tillers hill-1 (5.86 and 4.46, respectively) was produced in Kalizira × control treatment. The highest number of grains panicle-1 (169.8) was produced by Binadhan-13 with 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest number of grains panicle-1 (91.85) was produced by Kalizira × control treatment. The highest grain yield (4.71 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + Vermicompost @ 3 t ha-1 treatment, while the lowest grain (2.31 t ha-1) was produced in Kalizira with Control treatment (Fig. 1). Higher rice yield might be due to the beneficial effect of combination of organic and inorganic fertilizer which offers a steady nutrient release compared to only inorganic fertilizer. This phenomenon allows plants to higher nutrient uptake which resulted in the greater source accumulation and efficient translocation of photosynthates into the sink as indicated by higher yield attributes. The highest straw yield (6.20 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest straw yield (3.43 t ha-1) was produced in Kalizira with Control treatment. ",
+            {
+              "type": "image",
+              "src": "./chart-1-Interaction-effect-of-variety.png",
+              "alt": "Chart 1. Interaction effect of variety and nutrient management on grain yield of aromatic fine rice"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "conclusion",
+      "number": 4,
       "title": "Conclusion",
-      "level": 1,
       "content": [
         "Therefore, in order to meet the increasing demand of aromatic rice, Binadhan-13 with 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 can be feasible in increasing higher productivity of aromatic fine rice. "
       ]
     },
     {
-      "id": "references",
+      "number": 5,
       "title": "References",
-      "level": 1,
       "content": [
         "Adhikari, A., Sarkar, M.A.R., Paul, S.K. and Saha, K.K. 2018. Impact of nutrient management on yield performance of some aromatic fine rice (Oryza sativa L.) varieties in Boro season. Archives of Agriculture and Environmental Science, 3(2): 245-251.  https://doi.org/10.26832/24566632.2018.030306 Ali, M.I., Sarkar, M.A.R and Paul, S.K. (2018). Influence of plant nutrient management on the yield performance of transplant Aman rice (Oryza sativa L.). Archives of Agriculture and Environmental Science, 3(1): 49-53.  https://doi.org/10.26832/24566632.2018.030106//  BBS (Bangladesh Bureau of Statistics) 2017. Monthly Statistical Bulletin, Ministry of Planning. Government of the People’s Republic of Bangladesh. Dhaka. pp. 49-69. Benitez, E., Nogales, R., Masciandaro, G. and Ceccanti, B. 2000. Isolation by isoeletric focusing of humic urease complexes from earth worm (Eisenia foetida) - processed sewage sludges. Biology and Fertility of Soils, 31: 489-493. https://doi.org/10.1007/s003740000197 Gomez, K.A. and Gomez, A.A. 1984. Statistical Procedures for Agricultural Research. Int. Rice Res. Inst., John Wiley and Sons. New York, Chichester, Brisbane, Toronto, Singapore, pp. 680. Haynes, R.J. 2005. Labile organic matter fractions as central components of the quality of agricultural soils. Advances in Agronomy, 85: 221-268. https://doi.org/10.1016/S0065- 2113(04)85005-3 Islam, N., Kabir, M.Y., Adhikary, S.K. and Jahan, M.S. 2013. Yield Performance of Six Local Aromatic Rice Cultivars. IOSR Journal of Agriculture and Veterinary Science, 6(3): 58-62. https://doi.org/10.9790/2380-0635862 Jahan, S., Sarkar, M.A.R. and Paul, S.K. 2017. Effect of Plant Spacing and Fertilizer Management on the Yield Performance of BRRI dhan39 under Old Brahmaputra Floodplain Soil. Madras Agricultural Journal, 104(1-3): 37-40. Meshenji, A., Gohain, T., Ruth, A., Mahamaya, B. and Ajit, K.M. 2018. Effect of integrated nutrient management on growth and yield of local rice (Oryza sativa L.) under rainfed upland condition of Nagaland. The Pharma Innovation Journal, 7(7): 426-429. Parihar, M., Meena, R.K., Jat, L.K., Suryakant and Jatav, H.S. 2015. Effect of Inorganic Fertilizers with and without FYM on Yield, Nutrient Uptake and Quality Parameters of Rice (Oryza Sativa L.). Journal of Environment and Ecology, 33(4): 1480-1484. Prodhan, S.B. 1992. Status of fertilizer use in developing countries of Asia and Pacific region. Proclamation Regional FADINAP Seminar, Chiang Mai, Thailand. pp 37-47. Rahman, A. 2018. Effect of crop establishment method on the growth and yield of boro rice. M.S. Thesis. Department of Agronomy, Bangladesh Agricultural University, Mymensingh. pp. 102. Rahman, M.M. and Yakupitiyage, A. 2006. Use of fishpond sediment for sustainable aquaculture-agriculture farming. International Journal of Sustainable Development Planning, 1: 192-202. https://doi.org/10.2495/SDP-V1-N2- 192-202 Roy, A., Sarkar, M.A.R. and Paul, S.K. 2018. Effect of age of seedlings at staggered transplanting and nutrient management on yield performance of aromatic fine rice (cv. BRRI dhan38). SAARC Journal of Agriculture, 16(1): 49-59. https://doi.org/10.3329/sja.v16i1.37422 Saha, U., Bhuiya, M.S.U. and Paul, S.K. 2014. Integrated use of cowdung and inorganic fertilizer on the performance of modern varieties of transplant Aman rice. Journal of Agroforestry and Environment, 8(2): 81-84. Sangeetha, S. P., Balakrishnan, A. and Devasenapathy, P. 2013. Influence of organic manures on yield and quality of rice (Oryza sativa L.) and blackgram (Vigna mungo L.) in riceblackgram cropping sequence. American Journal of Plant Sciences, 4(5): 7. https://doi.org/10.4236/ajps.2013.45141 Sarkar, S.K., Sarkar, M.A.R., Islam, N. and Paul, S.K. 2016. Morphophysiological attributes of three HYV aromatic fine rice varieties as affected by integrated nutrient management. Journal of Agroforestry and Environment, 10(1): 57-61 Sarkar, S.K., Sarkar, M.A.R., Islam, N. and Paul, S.K. 2014. Yield and quality of aromatic fine rice as affected by variety and nutrient management. Journal Bangladesh Agricultural University, 12(2): 279–284.  https://doi.org/10.3329/jbau.v12i2.28683 Sinha, T., Paul, S.K. and Sarkar, M.A.R. 2018. Effect of age of seedlings at staggered transplanting and weed management on the growth and yield of aromatic Boro rice (cv. BRRI dhan50). Journal of Bangladesh Agricultural University, 16(1): 5-11. https://doi.org/10.3329/jbau.v16i1.36472 UNDP and FAO 1988. Land Resources Appraisal of Bangladesh For Agricultural Development Report No. 2. Agro-ecological Regions of Bangladesh. United Nations Development Programme and Food and Agricultural Organization, Rome., Italy. pp. 212-221. Uppu, S.S. and Shiv, P. S. 2019. Effect of integrated nutrient management on yield and quality of Basmati rice varieties. Journal of Agricultural Science, 11( 5): 93-103.  https://doi.org/10.5539/jas.v11n5p93 Wahab, M.A., Haque, A.K.M.A., Bhuiya Z.H. and Islam M.A. 1983. Nutrient status of bottom soils of two ponds in BAU Campus. Bangladesh Journal of Fish, 6(1-2): 1-9."
       ]
-    }
-  ],
-  "tables": [
-    {
-      "id": "t1",
-      "label": "Table 1",
-      "title": "Effect of vermicompost and fertilizer on growth characters of aromatic rice",
-      "page": 262
-    },
-    {
-      "id": "t2",
-      "label": "Table 2",
-      "title": "Effect of vermicompost and fertilizer on yield contributing characters of aromatic rice",
-      "page": 263
-    },
-    {
-      "id": "t3",
-      "label": "Table 3",
-      "title": "Effect of vermicompost and fertilizer on grain yield and straw yield of aromatic rice",
-      "page": 264
-    },
-    {
-      "id": "t4",
-      "label": "Table 4",
-      "title": "Effect of vermicompost and fertilizer on harvest index and economic parameters of aromatic rice",
-      "page": 264
     }
   ],
   "pdf": "paper.pdf",
   "source": "pdf",
   "verification": "verified",
   "citations": {
-    "apa": "Laila, N., Sarkar, M.A.R., Paul, S.K. and Rahman, A. 2020. Yield performance of aromatic fine rice as influenced by integrated use of vermicompost and inorganic fertilizers. Journal of Bangladesh Agricultural University, 18(2): 260–265. https://doi.org/10.5455/JBAU.90309 ",
-    "bibtex": "@article{NowshinLaila2020Yield,\n  author   = {Nowshin Laila and Md. Abdur Rahman Sarkar and Swapan Kumar Paul and Afrina Rahman},\n  title    = {Yield performance of aromatic fine rice as influenced by integrated use of vermicompost and inorganic fertilizers},\n  journal  = {Journal of Bangladesh Agricultural University},\n  year     = {2020},\n  volume   = {18},\n  number   = {2},\n  pages    = {260--265},\n  doi      = {10.5455/JBAU.90309},\n  issn     = {1810-3030}\n}"
+    "source": "Laila, N., Sarkar, M.A.R., Paul, S.K. and Rahman, A. 2020. Yield performance of aromatic fine rice as influenced by integrated use of vermicompost and inorganic fertilizers. Journal of Bangladesh Agricultural University, 18(2): 260–265. https://doi.org/10.5455/JBAU.90309"
   }
 }
