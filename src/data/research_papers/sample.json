@@ -3,13 +3,19 @@
   "genre": "agriculture",
   "title": "",
   "authors": [
-    { "name": "First Author^", "role": "author" },
-    { "name": "Head Author*", "role": "author", "corresponding": true }
+    {
+      "name": "First Author^",
+      "role": "author"
+    },
+    {
+      "name": "Head Author*",
+      "role": "author",
+      "corresponding": true
+    }
   ],
   "institutions": [
     {
-      "name": "",
-      "location": ""
+      "name": ""
     }
   ],
   "year": 2024,
@@ -20,12 +26,6 @@
   "license": "CC-BY-4.0",
   "keywords": [],
   "abstract": "",
-  "study": {
-    "location": "",
-    "period": "",
-    "sampleSize": 0,
-    "method": ""
-  },
   "sections": [
     {
       "number": 1,
@@ -35,7 +35,6 @@
         {
           "type": "image",
           "src": "./image-file-name.png",
-          "alt": "Image description",
           "caption": "Image description"
         }
       ]

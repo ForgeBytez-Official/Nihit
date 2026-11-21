@@ -55,7 +55,6 @@
         {
           "type": "image",
           "src": "./table-1-total-amount-of-nutrient-applied.png",
-          "alt": "Table 1. Total amount of nutrient applied in different treatments",
           "caption": "Table 1. Total amount of nutrient applied in different treatments"
         }
       ]
@@ -72,7 +71,6 @@
             {
               "type": "image",
               "src": "./table-2-effect-of-variety-on-crop-characters.png",
-              "alt": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice",
               "caption": "Table 2. Effect of variety on crop characters, yield components and yield of aromatic fine rice"
             }
           ]
@@ -85,7 +83,6 @@
             {
               "type": "image",
               "src": "./table-3-effect-of-nutrient-management.png",
-              "alt": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice",
               "caption": "Table 3. Effect of nutrient management on crop characters, yield components and yield of aromatic fine rice"
             }
           ]
@@ -97,14 +94,12 @@
             {
               "type": "image",
               "src": "./table-4-interaction-effects-of-variety.png",
-              "alt": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice",
               "caption": "Table 4. Interaction effects of variety and nutrient management on yield contributing characters and yield of aromatic fine rice"
             },
             "Interaction of variety and nutrient management had no significant effect on plant height, panicle length, sterile spikelets panicle-1 , 1000-grain weight and harvest index (Table 4). There was significant variation in total tillers hill-1, number of effective tillers hill-1, number of grains panicle-1, grain yield and straw yield due to interaction between variety and nutrient management. The highest number of total and effective tillers hill-1 (9.22 and 8.26, respectively) was produced in Binadhan13 with 50% less than recommended dose of inorganic fertilizers + vermicompost @ 3 t ha-1 treatment, while the lowest number of total and effective tillers hill-1 (5.86 and 4.46, respectively) was produced in Kalizira × control treatment. The highest number of grains panicle-1 (169.8) was produced by Binadhan-13 with 50% less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest number of grains panicle-1 (91.85) was produced by Kalizira × control treatment. The highest grain yield (4.71 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + Vermicompost @ 3 t ha-1 treatment, while the lowest grain (2.31 t ha-1) was produced in Kalizira with Control treatment (Fig. 1). Higher rice yield might be due to the beneficial effect of combination of organic and inorganic fertilizer which offers a steady nutrient release compared to only inorganic fertilizer. This phenomenon allows plants to higher nutrient uptake which resulted in the greater source accumulation and efficient translocation of photosynthates into the sink as indicated by higher yield attributes. The highest straw yield (6.20 t ha-1) was produced in Binadhan-13 × 50 % less than recommended dose of inorganic fertilizer + vermicompost @ 3 t ha-1 treatment, while the lowest straw yield (3.43 t ha-1) was produced in Kalizira with Control treatment. ",
             {
               "type": "image",
-              "src": "./chart-1-Interaction-effect-of-variety.png",
-              "alt": "Chart 1. Interaction effect of variety and nutrient management on grain yield of aromatic fine rice"
+              "src": "./chart-1-Interaction-effect-of-variety.png"
             }
           ]
         }

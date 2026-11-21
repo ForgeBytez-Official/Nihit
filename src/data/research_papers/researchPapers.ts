@@ -93,6 +93,21 @@ function generateSectionId(titleOrSubtitle: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
+function imageAltText(caption: string | undefined, src: string): string {
+  const trimmedCaption = caption?.trim()
+  if (trimmedCaption) return trimmedCaption
+
+  const filename = src
+    .split(/[?#]/, 1)[0]
+    .split('/')
+    .pop()
+    ?.replace(/\.[^.]+$/, '')
+    .replace(/[-_]+/g, ' ')
+    .trim()
+
+  return filename || 'Image'
+}
+
 function normalizeSection(sec: PaperSection, paperDir: string): PaperSection {
   const displayTitle = sec.title || sec.subtitle || ''
   const autoId = sec.id || generateSectionId(displayTitle || 'section')
@@ -104,6 +119,7 @@ function normalizeSection(sec: PaperSection, paperDir: string): PaperSection {
       if (typeof item === 'object' && item !== null && item.type === 'image' && item.src) {
         return {
           ...item,
+          alt: imageAltText(item.caption, item.src),
           src: resolvePaperAssetUrl(paperDir, item.src),
         }
       }
