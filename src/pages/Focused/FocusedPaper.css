@@ -306,6 +306,41 @@ body.deep-focus-active {
   background: color-mix(in srgb, var(--color-accent-1) 85%, black);
 }
 
+/* Floating Exit Button for Mobile / Tablet Focus & Deep Focus Modes */
+.focused-floating-exit-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 1002;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: var(--font-subtitle);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 
+    0 12px 30px -4px color-mix(in srgb, var(--color-accent-1) 50%, transparent),
+    0 4px 12px rgba(42, 35, 32, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.focused-floating-exit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+@media (min-width: 1060px) {
+  .focused-floating-exit-btn {
+    display: none;
+  }
+}
+
 /* ==========================================================================
    Mobile & Tablet Responsiveness
    ========================================================================== */
@@ -321,10 +356,35 @@ body.deep-focus-active {
   .focused-sidebars {
     order: 2;
     position: static;
+    width: 100%;
+    max-width: 100%;
   }
 
   .focused-main-area {
     order: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* In focus or deep focus mode on mobile/tablet, hide sidebars so user has 100% reading space */
+  .focused-page--focus-mode .focused-sidebars,
+  .focused-page--deep-focus .focused-sidebars {
+    display: none !important;
+  }
+
+  .focused-page--focus-mode,
+  .focused-page--deep-focus {
+    padding-bottom: 5.5rem;
+  }
+}
+
+/* Tablet (641px - 1059px): Lay sidebars out cleanly in a 2-column or responsive grid below content */
+@media (min-width: 641px) and (max-width: 1059px) {
+  .focused-sidebars__column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.25rem;
+    align-items: start;
   }
 }
 
@@ -333,10 +393,10 @@ body.deep-focus-active {
     padding: 1.25rem 0 3rem;
   }
 
-  .focused-mode-exit-pill,
-  .focused-deep-exit-pill {
-    top: auto;
+  .focused-floating-exit-btn {
     bottom: 1.25rem;
     right: 1.25rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.8125rem;
   }
 }

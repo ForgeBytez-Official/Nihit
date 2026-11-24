@@ -38,9 +38,19 @@
   padding: 3px;
   background: color-mix(in srgb, var(--text-primary) 6%, transparent);
   border-radius: var(--radius-pill);
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.main-citation-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .main-citation-tab {
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-subtitle);
@@ -70,6 +80,7 @@
   color: var(--text-primary);
   white-space: pre-wrap;
   word-break: break-word;
+  overflow-wrap: anywhere;
   margin: 0 0 1rem;
 }
 
@@ -106,4 +117,21 @@
   font-family: var(--font-subtitle);
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .main-citation-box {
+    padding: 1.15rem;
+  }
+
+  .main-citation-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .main-citation-copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

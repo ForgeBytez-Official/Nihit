@@ -86,3 +86,20 @@
   color: var(--color-accent-2);
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .universal-nav-indicator {
+    max-width: 320px;
+    padding: 0 0.75rem;
+  }
+
+  .universal-nav-indicator__crumb {
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .universal-nav-indicator {
+    display: none !important;
+  }
+}

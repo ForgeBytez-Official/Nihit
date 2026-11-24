@@ -353,6 +353,27 @@ export default function FocusedPaper() {
             </AnimatePresence>
           </article>
 
+          {/* Floating Exit Button for Mobile / Tablet Focus & Deep Focus Modes */}
+          <AnimatePresence>
+            {(isFocusedMode || isDeepFocus) && (
+              <motion.button
+                key="focused-floating-exit-btn"
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.9 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                type="button"
+                onClick={isDeepFocus ? toggleDeepFocus : toggleFocusedMode}
+                className="focused-floating-exit-btn"
+                title={isDeepFocus ? 'Exit Deep Focus Mode' : 'Exit Focus Mode'}
+                aria-label={isDeepFocus ? 'Exit Deep Focus Mode' : 'Exit Focus Mode'}
+              >
+                {isDeepFocus ? <BookOpen size={15} /> : <BookOpen size={15} />}
+                <span>{isDeepFocus ? 'Exit Deep Focus' : 'Exit Focus Mode'}</span>
+              </motion.button>
+            )}
+          </AnimatePresence>
+
           {/* =================================================================
               SIDEBAR AREA
               All 3 containers scroll naturally with CSS sticky:

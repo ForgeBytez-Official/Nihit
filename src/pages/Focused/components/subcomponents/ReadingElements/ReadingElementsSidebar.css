@@ -7,17 +7,23 @@
   position: relative;
 }
 
-/* Vertically aligned buttons outside the container on the left */
+/* Vertically aligned buttons outside the container on the left - desktop only */
 .reading-elements-tabs-stack {
-  position: absolute;
-  top: 1.25rem;
-  left: 0;
-  transform: translateX(-100%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 100;
-  pointer-events: auto;
+  display: none;
+}
+
+@media (min-width: 1060px) {
+  .reading-elements-tabs-stack {
+    position: absolute;
+    top: 1.25rem;
+    left: 0;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 100;
+    pointer-events: auto;
+  }
 }
 
 /* Individual tab sticking outside the left border of the card with vertical text layout */
@@ -179,6 +185,27 @@
   color: var(--color-accent-1);
   background: color-mix(in srgb, var(--color-accent-1) 8%, transparent);
   transform: translateY(-1px);
+}
+
+.reading-action-btn--mode-active {
+  background: var(--color-accent-1);
+  color: #FFFFFF;
+  border-color: var(--color-accent-1);
+  box-shadow: 0 4px 12px -2px color-mix(in srgb, var(--color-accent-1) 40%, transparent);
+}
+
+.reading-action-btn--deep-active {
+  background: var(--color-accent-2);
+  color: #FFFFFF;
+  border-color: var(--color-accent-2);
+  box-shadow: 0 4px 12px -2px color-mix(in srgb, var(--color-accent-2) 40%, transparent);
+}
+
+/* On large desktop where outset tabs stick out, hide the in-card modes to keep the card compact */
+@media (min-width: 1060px) {
+  .reading-elements-section--modes {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {

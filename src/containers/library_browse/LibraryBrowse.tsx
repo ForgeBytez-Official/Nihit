@@ -20,6 +20,7 @@ import './LibraryBrowse.css'
 export function LibraryBrowse() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [sidebarHidden, setSidebarHidden] = useState(false)
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   // Pagination / Expansion toggles for each filter section (Max 10 initially)
   const [showAllGenres, setShowAllGenres] = useState(false)
@@ -181,10 +182,31 @@ export function LibraryBrowse() {
 
             <div className="library-sidebar__card">
               <div className="library-sidebar__header">
-                <div className="library-sidebar__title-wrap">
-                  <Filter size={15} className="text-[var(--color-accent-1)]" />
-                  <h3 className="library-sidebar__title">Filter Archive</h3>
+                <button
+                  type="button"
+                  onClick={() => setMobileFiltersOpen(v => !v)}
+                  className="library-sidebar__mobile-toggle"
+                  aria-expanded={mobileFiltersOpen}
+                  aria-controls="library-sidebar-body"
+                >
+                  <div className="library-sidebar__title-wrap">
+                    <Filter size={15} className="text-[var(--color-accent-1)]" />
+                    <h3 className="library-sidebar__title">
+                      Filter Archive {activeFilterCount > 0 ? `(${activeFilterCount})` : ''}
+                    </h3>
+                  </div>
+                  <span className="library-sidebar__mobile-chevron">
+                    {mobileFiltersOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </span>
+                </button>
+
+                <div className="library-sidebar__desktop-header">
+                  <div className="library-sidebar__title-wrap">
+                    <Filter size={15} className="text-[var(--color-accent-1)]" />
+                    <h3 className="library-sidebar__title">Filter Archive</h3>
+                  </div>
                 </div>
+
                 {activeFilterCount > 0 && (
                   <button
                     type="button"
@@ -232,6 +254,12 @@ export function LibraryBrowse() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              {/* Collapsible Filter Groups (open by default on desktop, toggleable on mobile) */}
+              <div
+                id="library-sidebar-body"
+                className={`library-sidebar__body ${mobileFiltersOpen ? 'library-sidebar__body--open' : ''}`}
+              >
 
               {/* Filter Group: Research Genre (Max 10 + View More) */}
               <div className="library-filter-group">
@@ -387,6 +415,7 @@ export function LibraryBrowse() {
                     )}
                   </button>
                 )}
+              </div>
               </div>
             </div>
           </aside>

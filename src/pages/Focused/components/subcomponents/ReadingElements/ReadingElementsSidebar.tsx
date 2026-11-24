@@ -89,6 +89,36 @@ export const ReadingElementsSidebar: React.FC<ReadingElementsSidebarProps> = ({
         </div>
       </div>
 
+      {/* Reading Modes Section (Active on mobile/tablet) */}
+      <div className="reading-elements-section reading-elements-section--modes">
+        <span className="reading-elements-label">Reading Modes</span>
+        <div className="reading-action-row">
+          <button
+            type="button"
+            onClick={onToggleFocusMode}
+            className={`reading-action-btn ${
+              isFocusedMode ? 'reading-action-btn--mode-active' : 'reading-action-btn--subtle'
+            }`}
+            title={isFocusedMode ? 'Exit Focused Mode' : 'Enter Focused Mode'}
+          >
+            {isFocusedMode ? <Check size={14} /> : <Eye size={14} />}
+            <span>{isFocusedMode ? 'Exit Focus' : 'Focus Mode'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={onToggleDeepFocus}
+            className={`reading-action-btn ${
+              isDeepFocus ? 'reading-action-btn--deep-active' : 'reading-action-btn--subtle'
+            }`}
+            title={isDeepFocus ? 'Exit Deep Focus' : 'Deep Focus'}
+          >
+            {isDeepFocus ? <Check size={14} /> : <Maximize2 size={14} />}
+            <span>{isDeepFocus ? 'Exit Deep' : 'Deep Focus'}</span>
+          </button>
+        </div>
+      </div>
+
       {/* Document Operations */}
       <div className="reading-elements-section">
         <span className="reading-elements-label">Paper Operations</span>

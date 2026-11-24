@@ -496,6 +496,8 @@
 
 .navbar__mobile-nav {
   overflow: hidden;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
   border-top: 1px solid var(--border-default);
   background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
   backdrop-filter: blur(24px) saturate(190%);
@@ -594,4 +596,29 @@
   align-items: center;
   justify-content: flex-end;
   pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .navbar-wrapper--unscrolled .navbar__inner,
+  .navbar-wrapper--scrolled .navbar__inner {
+    padding: 0 0.85rem;
+  }
+
+  .navbar__brand-text {
+    font-size: 1.25rem;
+  }
+
+  .navbar__brand-tagline {
+    font-size: 0.55rem;
+  }
+
+  .navbar-subbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-subbar__center {
+    display: none !important;
+  }
 }

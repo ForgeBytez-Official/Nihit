@@ -14,37 +14,41 @@
 .library-page__header-meta {
   color: var(--color-accent-1);
   font-family: var(--font-subtitle);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .library-page__title {
   font-family: var(--font-title);
-  font-size: clamp(2.25rem, 4.4vw, 3.25rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.15;
   margin-bottom: 0.75rem;
+  word-break: break-word;
 }
 
 .library-page__badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  /* Spacing between the icon and "Open Research Archive" */
+  gap: 0.5rem;
   font-family: var(--font-subtitle);
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--color-accent-1);
 }
 
-/* Add a style for the publication count metadata next to it */
+/* Style for publication count metadata */
 .library-page__count-meta {
-  margin-left: 0.75rem;
-  padding-left: 0.75rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
   border-left: 1px solid var(--border-default);
-  font-size: 1.7rem;
+  font-size: 0.925rem;
   font-weight: 500;
   color: var(--color-accent-2);
 }
@@ -103,38 +107,44 @@
   }
 }
 
-/* Outset button sticking outside the sidebar container on its right border vertically with vertical text */
+/* Outset button sticking outside the sidebar container - desktop only to prevent mobile overflow */
 .library-sidebar__toggle-tab {
-  position: absolute;
-  top: 1.25rem;
-  right: 0;
-  transform: translateX(100%);
-  writing-mode: vertical-rl;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  padding: 0.85rem 0.45rem;
-  background: color-mix(in srgb, var(--bg-surface) 96%, transparent);
-  backdrop-filter: blur(20px) saturate(190%);
-  -webkit-backdrop-filter: blur(20px) saturate(190%);
-  border: 1px solid var(--border-default);
-  border-left: 2px solid var(--color-accent-3);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  color: var(--text-primary);
-  font-family: var(--font-subtitle);
-  font-size: 0.725rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  box-shadow:
-    5px 6px 18px -2px rgba(42, 35, 32, 0.08),
-    2px 2px 6px rgba(42, 35, 32, 0.04);
-  white-space: nowrap;
-  user-select: none;
-  z-index: 100;
-  pointer-events: auto;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .library-sidebar__toggle-tab {
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
+    transform: translateX(100%);
+    writing-mode: vertical-rl;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.85rem 0.45rem;
+    background: color-mix(in srgb, var(--bg-surface) 96%, transparent);
+    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
+    border: 1px solid var(--border-default);
+    border-left: 2px solid var(--color-accent-3);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text-primary);
+    font-family: var(--font-subtitle);
+    font-size: 0.725rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow:
+      5px 6px 18px -2px rgba(42, 35, 32, 0.08),
+      2px 2px 6px rgba(42, 35, 32, 0.04);
+    white-space: nowrap;
+    user-select: none;
+    z-index: 100;
+    pointer-events: auto;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
 /* Button 3 (Library Filter Tab): Uses Accent 3 (Warm Ochre / Sand) */
@@ -155,7 +165,7 @@
   box-shadow: 0 4px 20px -2px rgba(42, 35, 32, 0.03);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .library-sidebar__header {
@@ -164,6 +174,53 @@
   justify-content: space-between;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-default);
+}
+
+.library-sidebar__mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+}
+
+.library-sidebar__desktop-header {
+  display: none;
+}
+
+.library-sidebar__mobile-chevron {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.library-sidebar__body {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.library-sidebar__body--open {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .library-sidebar__mobile-toggle {
+    display: none;
+  }
+
+  .library-sidebar__desktop-header {
+    display: flex;
+  }
+
+  .library-sidebar__body {
+    display: flex;
+  }
 }
 
 .library-sidebar__title-wrap {
@@ -433,10 +490,39 @@
   width: 100%;
 }
 
+@media (min-width: 769px) and (max-width: 1023px) {
+  .library-genre-row__item {
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+}
+
 @media (max-width: 768px) {
   .library-genre-row__item {
     max-width: 100%;
     flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .library-page {
+    padding: 1.5rem 0 3.5rem;
+  }
+
+  .library-sidebar__card {
+    padding: 1rem 1.15rem;
+  }
+
+  .library-genre-section {
+    padding: 0.75rem 0;
+  }
+
+  .library-page__count-meta {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
   }
 }
 

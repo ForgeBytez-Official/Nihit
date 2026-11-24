@@ -24,11 +24,13 @@
 }
 
 .home-hero__title {
-  font-size: clamp(2.5rem, 5vw, 3.85rem);
+  font-size: clamp(2rem, 5vw, 3.85rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .home-hero__accent {
@@ -255,4 +257,57 @@
   font-size: 0.8125rem;
   color: var(--text-primary);
   font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    padding: 2.25rem 0 1.5rem;
+  }
+
+  .home-hero__inner {
+    gap: 2.25rem;
+  }
+
+  .home-hero__content {
+    gap: 1.25rem;
+  }
+
+  .home-hero__title {
+    font-size: clamp(1.85rem, 6vw, 2.75rem);
+  }
+
+  .home-hero__description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .home-hero__cta-group {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .home-hero__cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;
+  }
+
+  .home-hero__stats {
+    gap: 1rem;
+    padding-top: 1.25rem;
+  }
+
+  .home-hero__preview-panel {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .home-hero {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .home-hero__inner {
+    gap: 2.5rem;
+  }
 }
