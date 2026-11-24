@@ -109,3 +109,28 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+@media (max-width: 640px) {
+  .paper-index-card {
+    gap: 0.45rem;
+  }
+
+  .paper-index-nav {
+    max-height: 200px;
+  }
+
+  .paper-index-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .paper-index-link__indicator {
+    width: 16px;
+    height: 16px;
+  }
+
+  .paper-index-link__num {
+    font-size: 0.625rem;
+  }
+}

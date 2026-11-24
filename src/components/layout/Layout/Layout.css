@@ -9,3 +9,9 @@
   flex: 1;
   padding-top: 5.75rem;
 }
+
+@media (max-width: 640px) {
+  .layout__main {
+    padding-top: 4.5rem;
+  }
+}

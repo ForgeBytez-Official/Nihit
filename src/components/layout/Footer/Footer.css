@@ -310,3 +310,30 @@
   border-color: var(--color-accent-1);
   background: color-mix(in srgb, var(--color-accent-1) 10%, transparent);
 }
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 2.75rem 0 1.5rem;
+  }
+
+  .footer__grid {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer__brand-col {
+    gap: 0.85rem;
+  }
+
+  .footer__bottom {
+    padding-top: 1.5rem;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer__bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}

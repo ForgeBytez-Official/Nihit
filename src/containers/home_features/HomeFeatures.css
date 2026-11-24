@@ -86,3 +86,22 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .home-features-section {
+    padding: 2.5rem 0;
+  }
+
+  .home-section-header--centered {
+    margin-bottom: 1.75rem;
+  }
+
+  .home-feature-card {
+    padding: 1.25rem 1rem;
+    gap: 0.65rem;
+  }
+
+  .home-features-grid {
+    gap: 1rem;
+  }
+}
+

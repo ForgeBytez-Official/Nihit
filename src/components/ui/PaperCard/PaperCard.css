@@ -210,3 +210,24 @@
   color: var(--text-muted);
   font-weight: 500;
 }
+
+@media (max-width: 640px) {
+  .paper-card {
+    padding: 1.15rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .paper-card__title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .paper-card__abstract {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .paper-card__footer {
+    padding-top: 0.65rem;
+  }
+}

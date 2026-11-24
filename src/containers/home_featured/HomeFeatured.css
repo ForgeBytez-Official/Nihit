@@ -64,3 +64,25 @@
   }
 }
 
+@media (max-width: 640px) {
+  .home-featured-section {
+    padding: 1rem 0;
+  }
+
+  .home-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-section-title {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+    word-break: break-word;
+  }
+
+  .home-featured-grid {
+    gap: 1.25rem;
+  }
+}
+

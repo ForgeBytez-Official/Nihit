@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 /* 3. Design Tokens (Light Mode Default) */
 :root {
   /* Color Scheme - 3 Curated Accents */
@@ -118,6 +123,12 @@ p {
   width: 90%;
   max-width: var(--container-max-width);
   margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+  }
 }
 
 .btn {

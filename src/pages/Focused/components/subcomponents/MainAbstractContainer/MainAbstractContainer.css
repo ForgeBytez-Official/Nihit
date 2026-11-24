@@ -42,3 +42,27 @@
   font-style: italic;
   font-weight: 400;
 }
+
+@media (max-width: 640px) {
+  .main-abstract-area {
+    padding: 0.25rem 0 1.15rem;
+  }
+
+  .main-abstract-heading {
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .main-abstract-title {
+    font-size: 1.05rem;
+  }
+
+  .main-abstract-prose {
+    padding-left: 0.75rem;
+  }
+
+  .main-abstract-lead {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+}

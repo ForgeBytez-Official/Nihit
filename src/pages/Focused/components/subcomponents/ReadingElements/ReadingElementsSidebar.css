@@ -209,8 +209,29 @@
 }
 
 @media (max-width: 640px) {
-  .reading-elements-outset-tab {
+  .reading-elements-card {
+    gap: 0.75rem;
+  }
+
+  .reading-elements-section {
+    gap: 0.35rem;
+  }
+
+  .reading-elements-label {
+    font-size: 0.65rem;
+  }
+
+  .reading-elements-actions {
+    gap: 0.35rem;
+  }
+
+  .reading-action-row {
+    gap: 0.35rem;
+  }
+
+  .reading-action-btn {
     padding: 0.45rem 0.65rem;
-    font-size: 0.725rem;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
   }
 }

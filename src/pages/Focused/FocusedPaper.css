@@ -45,24 +45,26 @@ body.deep-focus-active {
   min-height: 100vh;
 }
 
-/* Enhanced immersive reading typography in Focus & Deep Focus modes */
-.focused-page--focus-mode .main-paper-title,
-.focused-page--deep-focus .main-paper-title {
-  font-size: clamp(2.35rem, 4.4vw, 3.25rem);
-  line-height: 1.18;
-}
+/* Enhanced immersive reading typography in Focus & Deep Focus modes (desktop only, mobile stays proportional) */
+@media (min-width: 641px) {
+  .focused-page--focus-mode .main-paper-title,
+  .focused-page--deep-focus .main-paper-title {
+    font-size: clamp(2.35rem, 4.4vw, 3.25rem);
+    line-height: 1.18;
+  }
 
-.focused-page--focus-mode .section-prose p,
-.focused-page--deep-focus .section-prose p {
-  font-size: 1.125rem;
-  line-height: 1.9;
-  letter-spacing: -0.003em;
-}
+  .focused-page--focus-mode .section-prose p,
+  .focused-page--deep-focus .section-prose p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    letter-spacing: -0.003em;
+  }
 
-.focused-page--focus-mode .main-abstract-lead,
-.focused-page--deep-focus .main-abstract-lead {
-  font-size: 1.2rem;
-  line-height: 1.9;
+  .focused-page--focus-mode .main-abstract-lead,
+  .focused-page--deep-focus .main-abstract-lead {
+    font-size: 1.2rem;
+    line-height: 1.9;
+  }
 }
 
 /* ==========================================================================
@@ -390,13 +392,56 @@ body.deep-focus-active {
 
 @media (max-width: 640px) {
   .focused-page {
-    padding: 1.25rem 0 3rem;
+    padding: 0.75rem 0 2.5rem;
+  }
+
+  .focused-layout {
+    gap: 1.35rem;
+  }
+
+  .focused-main-area {
+    gap: 1.5rem;
+  }
+
+  .focused-sidebars__column {
+    gap: 0.85rem;
+  }
+
+  .focused-sidebar-card {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .focused-sidebar-card__header {
+    padding-bottom: 0.5rem;
+  }
+
+  .focused-sidebar-card__title {
+    font-size: 0.875rem;
+  }
+
+  .focused-page--focus-mode .main-paper-title,
+  .focused-page--deep-focus .main-paper-title {
+    font-size: clamp(1.35rem, 5vw, 1.65rem);
+    line-height: 1.25;
+  }
+
+  .focused-page--focus-mode .section-prose p,
+  .focused-page--deep-focus .section-prose p {
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+
+  .focused-page--focus-mode .main-abstract-lead,
+  .focused-page--deep-focus .main-abstract-lead {
+    font-size: 0.9375rem;
+    line-height: 1.65;
   }
 
   .focused-floating-exit-btn {
     bottom: 1.25rem;
     right: 1.25rem;
-    padding: 0.65rem 1.1rem;
-    font-size: 0.8125rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
   }
 }

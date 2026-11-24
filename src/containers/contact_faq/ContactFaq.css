@@ -89,3 +89,27 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .contact-faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .contact-faq-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-faq-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-faq-question {
+    padding: 1rem 1.15rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-faq-answer {
+    padding: 0 1.15rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
